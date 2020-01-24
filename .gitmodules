@@ -1,0 +1,3 @@
+[submodule "MoneyHub"]
+	path = MoneyHub
+	url = https://github.com/SamDressler/MoneyHub.git
