@@ -48,9 +48,10 @@
             this.homeMenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.homeToolStripMenuItem,
             this.exitMenuStripButton});
+            this.homeMenuStrip.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.HorizontalStackWithOverflow;
             this.homeMenuStrip.Location = new System.Drawing.Point(0, 0);
             this.homeMenuStrip.Name = "homeMenuStrip";
-            this.homeMenuStrip.Size = new System.Drawing.Size(1139, 24);
+            this.homeMenuStrip.Size = new System.Drawing.Size(1100, 24);
             this.homeMenuStrip.TabIndex = 0;
             this.homeMenuStrip.Text = "menuStrip1";
             // 
@@ -104,7 +105,7 @@
             this.homeBasePanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.homeBasePanel.Location = new System.Drawing.Point(0, 24);
             this.homeBasePanel.Name = "homeBasePanel";
-            this.homeBasePanel.Size = new System.Drawing.Size(1139, 670);
+            this.homeBasePanel.Size = new System.Drawing.Size(1100, 826);
             this.homeBasePanel.TabIndex = 1;
             // 
             // Home
@@ -113,7 +114,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.ClientSize = new System.Drawing.Size(1139, 694);
+            this.ClientSize = new System.Drawing.Size(1100, 850);
             this.Controls.Add(this.homeBasePanel);
             this.Controls.Add(this.homeMenuStrip);
             this.Cursor = System.Windows.Forms.Cursors.Default;
