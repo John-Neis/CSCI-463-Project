@@ -28,22 +28,26 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Home));
             this.homeMenuStrip = new System.Windows.Forms.MenuStrip();
             this.homeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.accountDetailsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.manageAccountsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.newAccountToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.removeAccountToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.exitMenuStripButton = new System.Windows.Forms.ToolStripMenuItem();
+            this.homeBasePanel = new System.Windows.Forms.Panel();
             this.homeMenuStrip.SuspendLayout();
             this.SuspendLayout();
             // 
             // homeMenuStrip
             // 
-            this.homeMenuStrip.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.homeMenuStrip.BackColor = System.Drawing.Color.WhiteSmoke;
             this.homeMenuStrip.GripStyle = System.Windows.Forms.ToolStripGripStyle.Visible;
             this.homeMenuStrip.ImeMode = System.Windows.Forms.ImeMode.On;
             this.homeMenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.homeToolStripMenuItem});
+            this.homeToolStripMenuItem,
+            this.exitMenuStripButton});
             this.homeMenuStrip.Location = new System.Drawing.Point(0, 0);
             this.homeMenuStrip.Name = "homeMenuStrip";
             this.homeMenuStrip.Size = new System.Drawing.Size(1139, 24);
@@ -63,7 +67,7 @@
             // 
             this.accountDetailsToolStripMenuItem.Name = "accountDetailsToolStripMenuItem";
             this.accountDetailsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.accountDetailsToolStripMenuItem.Text = "Account Details";
+            this.accountDetailsToolStripMenuItem.Text = "Accounts Summary";
             // 
             // manageAccountsToolStripMenuItem
             // 
@@ -86,14 +90,35 @@
             this.removeAccountToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.removeAccountToolStripMenuItem.Text = "Remove Account";
             // 
+            // exitMenuStripButton
+            // 
+            this.exitMenuStripButton.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.exitMenuStripButton.Name = "exitMenuStripButton";
+            this.exitMenuStripButton.Size = new System.Drawing.Size(38, 20);
+            this.exitMenuStripButton.Text = "Exit";
+            this.exitMenuStripButton.Click += new System.EventHandler(this.exitMenuStripButton_Click);
+            // 
+            // homeBasePanel
+            // 
+            this.homeBasePanel.BackColor = System.Drawing.Color.CadetBlue;
+            this.homeBasePanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.homeBasePanel.Location = new System.Drawing.Point(0, 24);
+            this.homeBasePanel.Name = "homeBasePanel";
+            this.homeBasePanel.Size = new System.Drawing.Size(1139, 670);
+            this.homeBasePanel.TabIndex = 1;
+            // 
             // Home
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(1139, 694);
+            this.Controls.Add(this.homeBasePanel);
             this.Controls.Add(this.homeMenuStrip);
             this.Cursor = System.Windows.Forms.Cursors.Default;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.homeMenuStrip;
             this.Name = "Home";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -113,5 +138,7 @@
         private System.Windows.Forms.ToolStripMenuItem manageAccountsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem newAccountToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem removeAccountToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem exitMenuStripButton;
+        private System.Windows.Forms.Panel homeBasePanel;
     }
 }

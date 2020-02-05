@@ -16,5 +16,17 @@ namespace MoneyHub
         {
             InitializeComponent();
         }
+        #region Form Closing
+        private void exitMenuStripButton_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show("Exit MoneyHub?", "Confirm Exit", MessageBoxButtons.OKCancel);
+            if (result == DialogResult.OK)
+            {
+                Console.WriteLine(DateTime.Now + ": Application Exited");
+                Environment.Exit(0);
+            }
+        }
+
+        #endregion form closing
     }
 }
