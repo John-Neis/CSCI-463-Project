@@ -1,4 +1,4 @@
-package mainModule;
+//package mainModule;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -75,7 +75,7 @@ public class ServerDriver {
 				while((clientResponse = input.readLine()) != null) {
 					
 					System.out.println(clientResponse);
-					String sql = "select * from user;";
+					String sql = "select * from users;";
 					int resultCount = -1;
 					
 					try {
