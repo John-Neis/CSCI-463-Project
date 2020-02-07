@@ -28,3 +28,4 @@ D:\UND\Classes\CSCI_463\CSCI-463-Project\UX\obj\Debug\MoneyHub.Properties.Resour
 D:\UND\Classes\CSCI_463\CSCI-463-Project\UX\obj\Debug\MoneyHub.csproj.GenerateResource.cache
 D:\UND\Classes\CSCI_463\CSCI-463-Project\UX\obj\Debug\MoneyHub.exe
 D:\UND\Classes\CSCI_463\CSCI-463-Project\UX\obj\Debug\MoneyHub.pdb
+D:\UND\Classes\CSCI_463\CSCI-463-Project\UX\obj\Debug\MoneyHub.AccountCreator.resources

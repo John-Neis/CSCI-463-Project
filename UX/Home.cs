@@ -17,16 +17,16 @@ namespace MoneyHub
             InitializeComponent();
         }
         #region Form Closing
-        private void exitMenuStripButton_Click(object sender, EventArgs e)
+        private void exitMenuStripButton_Click_1(object sender, EventArgs e)
         {
-            DialogResult result = MessageBox.Show("Exit MoneyHub?", "Confirm Exit", MessageBoxButtons.OKCancel);
+            DialogResult result = MessageBox.Show("Sign out?", "Confirm Sign out", MessageBoxButtons.OKCancel);
             if (result == DialogResult.OK)
             {
-                Console.WriteLine(DateTime.Now + ": Application Exited");
-                Environment.Exit(0);
+                Console.WriteLine(DateTime.Now + ": User Signed out");
+
+                //Environment.Exit(0);
             }
         }
-
         #endregion form closing
     }
 }
