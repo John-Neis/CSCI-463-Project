@@ -14,7 +14,8 @@ namespace MoneyHub
         private String password = string.Empty;
         private String firstName = string.Empty;
         private String lastName = string.Empty;
-        private DateTime DOB;
+        private int userId;
+       
         #endregion
         #region User Constructors
         public User(String username, String password)
@@ -22,13 +23,12 @@ namespace MoneyHub
             this.username = username;
             this.password = password;
         }
-        public User(String username, String password, String firstName, String lastName, DateTime date)
+        public User(String username, String password, String firstName, String lastName)
         {
             this.username = username;
             this.password = password;
             this.firstName = firstName;
             this.lastName = lastName;
-            this.DOB = date;
         }
         public User()
         {

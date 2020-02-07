@@ -25,7 +25,7 @@ namespace MoneyHub
         
         //User currentUser = null;
         User testUser = new User("test", "test");
-        Home mhclient = new Home();
+        Home userHome = new Home();
         String userText = string.Empty;
         String pwdText = string.Empty;
         #endregion
@@ -50,10 +50,8 @@ namespace MoneyHub
                 {
                     if (pwdText.Equals("test"))
                     {
-                        Console.WriteLine(DateTime.Now + ": Login Succeeded, User: " + testUser.getUsername());
-                        
-                        mhclient.Show();
-                        this.Hide();
+                        //loginSucceeded(currentUser);
+                        loginSucceeded();
                     }
                     else
                     {
@@ -76,14 +74,25 @@ namespace MoneyHub
             }
         }
         #endregion user login attempt
-
+        #region login succeeded
+        private void loginSucceeded()
+        {
+            Console.WriteLine(DateTime.Now + ": Login Succeeded, User: " + testUser.getUsername());
+            this.loginPanel.Visible = false;
+            this.loginBasePanel.Controls.Add(userHome.homeBasePanel);
+            userHome.homeBasePanel.Dock = DockStyle.Right;
+            //mhclient.Show();
+            //this.Hide();
+        }
+        #endregion
         #endregion startup
 
         #endregion login
-
+        #region create account
         private void createAccountLinkLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-
+            
         }
+        #endregion
     }
 }
