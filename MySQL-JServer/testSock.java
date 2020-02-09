@@ -18,12 +18,19 @@ public class testSock {
 
 			String userInput;
 			while((userInput = STDIN.readLine()) != null) {
-				output.println("Client: " + userInput);
+				output.println(userInput);
 				String servermsg = input.readLine();
 				System.out.println("Server: " + servermsg);
 				int cnt = Integer.parseInt(servermsg);
+				servermsg = "";
 				for(int i = 0; i < cnt; i++) {
-					System.out.println("Server: " + input.readLine());
+					servermsg += input.readLine() + "\n";
+				}
+
+				System.out.println(servermsg);
+				if(servermsg.contains("Goodbye")) {
+					System.out.println("Server has shut down. Terminating...");
+					break;
 				}
 			}
 		} catch(IOException e) {

@@ -73,16 +73,24 @@ public class ServerDriver {
 				PrintWriter output = new PrintWriter(client.getOutputStream(), true);
 				BufferedReader input = new BufferedReader(new InputStreamReader(client.getInputStream()));
 				
-				while((clientResponse = input.readLine()) != null) {
+				while((clientResponse = input.readLine().trim()) != null) {
 					
-					System.out.println(clientResponse);
+					System.out.println("Client: " + clientResponse);
+
+					if(clientResponse.equalsIgnoreCase("quit")) {
+						output.println("1");
+						output.println("You've initiated remote shutdown of server. Goodbye.");
+						System.out.println("Server shutting down.");
+						break;
+					}
+
 					String sql = "select * from users;";
 					int resultCount = -1;
 					
 					try {
 						rs = query(dbh, sql);
 						while(rs.next()) {
-							SQLResult += String.format("UserID %d\tAcctNum %d\tPwd %s\tf_name %s\tl_name %s\n", 
+							SQLResult += String.format("UserID: %d -- AcctNum: %d -- Pwd: %s -- f_name: %s -- l_name: %s\n", 
 									rs.getInt("UserID"), rs.getInt("AccountNumber"), rs.getString("Password"),
 									rs.getString("FirstName"), rs.getString("LastName")
 							);
@@ -97,8 +105,9 @@ public class ServerDriver {
 					System.out.println("Record count: " + resultCount);
 					System.out.println(SQLResult);
 					output.println(resultCount);
-					output.println(SQLResult);
-					
+					output.print(SQLResult);
+					output.flush();
+					SQLResult = "";
 				}
 				
 			} catch(IOException e) {
