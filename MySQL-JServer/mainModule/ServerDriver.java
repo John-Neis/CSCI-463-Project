@@ -49,6 +49,7 @@ public class ServerDriver {
 			);			
 		} catch(Exception e) {
 			e.printStackTrace();
+			System.exit(1);
 		}
 		System.out.println("MySQL Server connected successfully\n");
 		
