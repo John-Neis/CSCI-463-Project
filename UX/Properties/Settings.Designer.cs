@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace MoneyHub.Properties
+namespace MoneyHub_User_Interface.Properties
 {
 
 

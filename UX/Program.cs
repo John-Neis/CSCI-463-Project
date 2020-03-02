@@ -4,12 +4,12 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace MoneyHub
+namespace MoneyHub_User_Interface
 {
+
     static class Program
     {
-        //create a new login
-        public static Login login;
+        public static MoneyHubHome mh;
         //Windows requires this
         [STAThread]
         //Enable console debug information to be visible
@@ -23,8 +23,8 @@ namespace MoneyHub
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             AttachConsole(ATTACH_PARENT_PROCESS);
-            login = new Login();
-            Application.Run(login);
+            mh = new MoneyHubHome();
+            Application.Run(mh);
         }
     }
 }

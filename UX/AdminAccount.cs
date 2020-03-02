@@ -6,14 +6,12 @@ using System.Threading.Tasks;
 
 namespace MoneyHub_User_Interface
 {
-    class Account
+    class AdminAccount : UserAccount
     {
-        private int accountNumber = 0;
-        private string accountType; 
-        private int balance = 0;
-        public Account()
+        public AdminAccount()
         {
-
+           
         }
+
     }
 }

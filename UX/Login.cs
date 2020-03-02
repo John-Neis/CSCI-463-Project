@@ -8,91 +8,23 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace MoneyHub
+namespace MoneyHub_User_Interface
 {
     public partial class Login : Form
     {
-        #region Login
-
-        #region initialize variables
-        //Variables "192.168.51.209"
-        //byte[] ip = { 192, 168, 51, 209};
-        //Sam's pc ip
-        String ip = "192.168.51.209";
-        int port = 4444;
-        string message = "Test2";
-        ServerConnector client = new ServerConnector();
-        
-        //User currentUser = null;
-        User testUser = new User("test", "test");
-        Home userHome = new Home();
-        String userText = string.Empty;
-        String pwdText = string.Empty;
-        #endregion
-        #region Startup
         public Login()
         {
-            //this.client.ExecuteClient(ip, port, message);
             InitializeComponent();
         }
-        #region User Attempts to Login 
-        private void loginButton_Click(object sender, EventArgs e)
-        {
-            userText = this.usernameText.Text;
-            pwdText = this.passwordText.Text;
-            if (!userText.Equals(string.Empty) && !pwdText.Equals(string.Empty))
-            {
-                this.credentialsInvalidText.Visible = false;
-                //TODO: Check the userText against the database to see if there is an 
-                //      account with that user name and then check the password if there is.
-                //for now the code will check to see if the user is test and password is test.
-                if (userText.Equals("test"))
-                {
-                    if (pwdText.Equals("test"))
-                    {
-                        //loginSucceeded(currentUser);
-                        loginSucceeded();
-                    }
-                    else
-                    {
-                        Console.WriteLine(DateTime.Now + ": Login Credentials Invalid:");
-                        this.credentialsInvalidText.Text = "Password is incorrect";
-                        this.credentialsInvalidText.Visible = true;
-                    }
-                }
-                else
-                {
-                    Console.WriteLine(DateTime.Now + ": Username Invalid:");
-                    this.credentialsInvalidText.Text = "Username not recognized";
-                    this.credentialsInvalidText.Visible = true;
-                }
-            }
-            else
-            {
-                Console.WriteLine(DateTime.Now + ": Login Credentials Invalid:");
-                this.credentialsInvalidText.Visible = true;
-            }
-        }
-        #endregion user login attempt
-        #region login succeeded
-        private void loginSucceeded()
-        {
-            Console.WriteLine(DateTime.Now + ": Login Succeeded, User: " + testUser.getUsername());
-            this.loginPanel.Visible = false;
-            this.loginBasePanel.Controls.Add(userHome.homeBasePanel);
-            userHome.homeBasePanel.Dock = DockStyle.Right;
-            //mhclient.Show();
-            //this.Hide();
-        }
-        #endregion
-        #endregion startup
 
-        #endregion login
-        #region create account
-        private void createAccountLinkLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        private void createAccountLink_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            
+            Program.mh.createAccount();
         }
-        #endregion
+
+        private void buttonLogin_Click(object sender, EventArgs e)
+        {
+            Program.mh.logUserIn();          
+        }
     }
 }

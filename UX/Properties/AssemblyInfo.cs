@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("MoneyHub")]
+[assembly: AssemblyTitle("MoneyHub_User_Interface")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("MoneyHub")]
+[assembly: AssemblyProduct("MoneyHub_User_Interface")]
 [assembly: AssemblyCopyright("Copyright ©  2020")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("cbab9f6f-2ac2-4b41-9335-fa97f97fbad6")]
+[assembly: Guid("e2a62767-dbcb-4425-8ae2-8150d93150ba")]
 
 // Version information for an assembly consists of the following four values:
 //
