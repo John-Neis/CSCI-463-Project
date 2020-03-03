@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.loginPanel = new System.Windows.Forms.Panel();
+            this.usernamePasswordInvalidText = new System.Windows.Forms.Label();
             this.createAccountForgotPasswordPanel = new System.Windows.Forms.Panel();
             this.forgotPasswordLink = new System.Windows.Forms.LinkLabel();
             this.label1 = new System.Windows.Forms.Label();
@@ -38,7 +39,7 @@
             this.buttonLogin = new System.Windows.Forms.Button();
             this.passwordLabel = new System.Windows.Forms.Label();
             this.usernameLabel = new System.Windows.Forms.Label();
-            this.usernamePasswordInvalidText = new System.Windows.Forms.Label();
+            this.remeberUserCheckBox = new System.Windows.Forms.CheckBox();
             this.loginPanel.SuspendLayout();
             this.createAccountForgotPasswordPanel.SuspendLayout();
             this.SuspendLayout();
@@ -46,6 +47,7 @@
             // loginPanel
             // 
             this.loginPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.loginPanel.Controls.Add(this.remeberUserCheckBox);
             this.loginPanel.Controls.Add(this.usernamePasswordInvalidText);
             this.loginPanel.Controls.Add(this.createAccountForgotPasswordPanel);
             this.loginPanel.Controls.Add(this.passwordTextBox);
@@ -59,6 +61,17 @@
             this.loginPanel.Name = "loginPanel";
             this.loginPanel.Size = new System.Drawing.Size(265, 284);
             this.loginPanel.TabIndex = 4;
+            // 
+            // usernamePasswordInvalidText
+            // 
+            this.usernamePasswordInvalidText.AutoSize = true;
+            this.usernamePasswordInvalidText.ForeColor = System.Drawing.Color.Brown;
+            this.usernamePasswordInvalidText.Location = new System.Drawing.Point(17, 137);
+            this.usernamePasswordInvalidText.Name = "usernamePasswordInvalidText";
+            this.usernamePasswordInvalidText.Size = new System.Drawing.Size(207, 19);
+            this.usernamePasswordInvalidText.TabIndex = 7;
+            this.usernamePasswordInvalidText.Text = "Username or Password is Invalid";
+            this.usernamePasswordInvalidText.Visible = false;
             // 
             // createAccountForgotPasswordPanel
             // 
@@ -141,7 +154,7 @@
             this.buttonLogin.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonLogin.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonLogin.Location = new System.Drawing.Point(13, 182);
+            this.buttonLogin.Location = new System.Drawing.Point(13, 194);
             this.buttonLogin.Margin = new System.Windows.Forms.Padding(4);
             this.buttonLogin.Name = "buttonLogin";
             this.buttonLogin.Size = new System.Drawing.Size(239, 33);
@@ -173,16 +186,19 @@
             this.usernameLabel.Text = "Username:";
             this.usernameLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // usernamePasswordInvalidText
+            // remeberUserCheckBox
             // 
-            this.usernamePasswordInvalidText.AutoSize = true;
-            this.usernamePasswordInvalidText.ForeColor = System.Drawing.Color.Brown;
-            this.usernamePasswordInvalidText.Location = new System.Drawing.Point(17, 137);
-            this.usernamePasswordInvalidText.Name = "usernamePasswordInvalidText";
-            this.usernamePasswordInvalidText.Size = new System.Drawing.Size(207, 19);
-            this.usernamePasswordInvalidText.TabIndex = 7;
-            this.usernamePasswordInvalidText.Text = "Username or Password is Invalid";
-            this.usernamePasswordInvalidText.Visible = false;
+            this.remeberUserCheckBox.AutoSize = true;
+            this.remeberUserCheckBox.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(40)))), ((int)(((byte)(60)))));
+            this.remeberUserCheckBox.FlatAppearance.CheckedBackColor = System.Drawing.Color.White;
+            this.remeberUserCheckBox.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.remeberUserCheckBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(150)))), ((int)(((byte)(230)))));
+            this.remeberUserCheckBox.Location = new System.Drawing.Point(21, 159);
+            this.remeberUserCheckBox.Name = "remeberUserCheckBox";
+            this.remeberUserCheckBox.Size = new System.Drawing.Size(145, 23);
+            this.remeberUserCheckBox.TabIndex = 8;
+            this.remeberUserCheckBox.Text = "Remeber Username";
+            this.remeberUserCheckBox.UseVisualStyleBackColor = true;
             // 
             // Login
             // 
@@ -216,5 +232,6 @@
         public System.Windows.Forms.Label label1;
         public System.Windows.Forms.LinkLabel createAccountLink;
         public System.Windows.Forms.Label usernamePasswordInvalidText;
+        public System.Windows.Forms.CheckBox remeberUserCheckBox;
     }
 }

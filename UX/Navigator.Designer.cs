@@ -29,86 +29,70 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Navigator));
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.panel1.SuspendLayout();
+            this.buttonHome = new System.Windows.Forms.Button();
+            this.navPanel = new System.Windows.Forms.Panel();
+            this.buttonAccount = new System.Windows.Forms.Button();
+            this.selectedPanelIndicator = new System.Windows.Forms.Panel();
+            this.navPanel.SuspendLayout();
             this.SuspendLayout();
             // 
-            // panel1
+            // buttonHome
             // 
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(265, 55);
-            this.panel1.TabIndex = 0;
+            this.buttonHome.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(40)))), ((int)(((byte)(60)))));
+            this.buttonHome.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(40)))), ((int)(((byte)(60)))));
+            this.buttonHome.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.buttonHome.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
+            this.buttonHome.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonHome.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonHome.ForeColor = System.Drawing.Color.White;
+            this.buttonHome.Image = ((System.Drawing.Image)(resources.GetObject("buttonHome.Image")));
+            this.buttonHome.Location = new System.Drawing.Point(11, 3);
+            this.buttonHome.Name = "buttonHome";
+            this.buttonHome.Size = new System.Drawing.Size(252, 71);
+            this.buttonHome.TabIndex = 2;
+            this.buttonHome.Text = "Home";
+            this.buttonHome.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.buttonHome.UseVisualStyleBackColor = false;
+            this.buttonHome.Click += new System.EventHandler(this.buttonHome_Click);
             // 
-            // label1
+            // navPanel
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(150)))), ((int)(((byte)(230)))));
-            this.label1.Location = new System.Drawing.Point(3, 9);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(134, 31);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Welcome,\r\n";
+            this.navPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(40)))), ((int)(((byte)(60)))));
+            this.navPanel.Controls.Add(this.selectedPanelIndicator);
+            this.navPanel.Controls.Add(this.buttonAccount);
+            this.navPanel.Controls.Add(this.buttonHome);
+            this.navPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.navPanel.Location = new System.Drawing.Point(0, 0);
+            this.navPanel.Name = "navPanel";
+            this.navPanel.Size = new System.Drawing.Size(265, 875);
+            this.navPanel.TabIndex = 5;
             // 
-            // button1
+            // buttonAccount
             // 
-            this.button1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button1.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
-            this.button1.Location = new System.Drawing.Point(0, 55);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(265, 71);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "Home";
-            this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button1.UseVisualStyleBackColor = true;
+            this.buttonAccount.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(40)))), ((int)(((byte)(60)))));
+            this.buttonAccount.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(40)))), ((int)(((byte)(60)))));
+            this.buttonAccount.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.buttonAccount.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
+            this.buttonAccount.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonAccount.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonAccount.ForeColor = System.Drawing.Color.White;
+            this.buttonAccount.Image = ((System.Drawing.Image)(resources.GetObject("buttonAccount.Image")));
+            this.buttonAccount.Location = new System.Drawing.Point(11, 78);
+            this.buttonAccount.Name = "buttonAccount";
+            this.buttonAccount.Size = new System.Drawing.Size(252, 71);
+            this.buttonAccount.TabIndex = 3;
+            this.buttonAccount.Text = "Accounts";
+            this.buttonAccount.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.buttonAccount.UseVisualStyleBackColor = false;
+            this.buttonAccount.Click += new System.EventHandler(this.buttonAccount_Click);
             // 
-            // button2
+            // selectedPanelIndicator
             // 
-            this.button2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button2.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
-            this.button2.Location = new System.Drawing.Point(0, 126);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(265, 71);
-            this.button2.TabIndex = 2;
-            this.button2.Text = "Home";
-            this.button2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button2.UseVisualStyleBackColor = true;
-            // 
-            // button3
-            // 
-            this.button3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button3.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Image = ((System.Drawing.Image)(resources.GetObject("button3.Image")));
-            this.button3.Location = new System.Drawing.Point(0, 197);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(265, 71);
-            this.button3.TabIndex = 3;
-            this.button3.Text = "Home";
-            this.button3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button3.UseVisualStyleBackColor = true;
-            // 
-            // button4
-            // 
-            this.button4.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button4.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.Image = ((System.Drawing.Image)(resources.GetObject("button4.Image")));
-            this.button4.Location = new System.Drawing.Point(0, 268);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(265, 71);
-            this.button4.TabIndex = 4;
-            this.button4.Text = "Home";
-            this.button4.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button4.UseVisualStyleBackColor = true;
+            this.selectedPanelIndicator.BackColor = System.Drawing.Color.Olive;
+            this.selectedPanelIndicator.Location = new System.Drawing.Point(1, 5);
+            this.selectedPanelIndicator.Name = "selectedPanelIndicator";
+            this.selectedPanelIndicator.Size = new System.Drawing.Size(10, 69);
+            this.selectedPanelIndicator.TabIndex = 4;
             // 
             // Navigator
             // 
@@ -116,27 +100,19 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(40)))), ((int)(((byte)(60)))));
             this.ClientSize = new System.Drawing.Size(265, 875);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.navPanel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Navigator";
             this.Text = "Navigator";
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            this.navPanel.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
+        public System.Windows.Forms.Panel navPanel;
+        public System.Windows.Forms.Button buttonHome;
+        private System.Windows.Forms.Panel selectedPanelIndicator;
+        public System.Windows.Forms.Button buttonAccount;
     }
 }

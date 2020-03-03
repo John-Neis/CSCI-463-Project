@@ -15,7 +15,8 @@ namespace MoneyHub_User_Interface
         private string _userPhoneNumber = string.Empty;
         private string _userFirstName = string.Empty;
         private string _userLastName = string.Empty;
-        private bool admin = false;
+        private int _UserID;
+        private bool _isAdmin = false;
 
         public UserAccount(string uname, string uPwd, string uemail, string uPhoneNum, string fname, string lname)
         {
@@ -25,7 +26,8 @@ namespace MoneyHub_User_Interface
             this._userPhoneNumber = uPhoneNum;
             this._userFirstName = fname;
             this._userLastName = lname;
-
+            this._isAdmin = false;
+            //TODO: somehow increment user id, 31800000, 31800001, 31800002, etc
         }
         public UserAccount()
         {
@@ -64,6 +66,15 @@ namespace MoneyHub_User_Interface
         {
             get { return this._userLastName; }
             set { this._userLastName = value; }
+        }
+        public int UserID
+        {
+            get { return this.UserID; }
+        }
+        public bool isAdmin
+        {
+            get { return this._isAdmin; }
+            set { this._isAdmin = isAdmin; }
         }
     }
 }

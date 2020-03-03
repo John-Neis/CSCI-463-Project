@@ -16,5 +16,19 @@ namespace MoneyHub_User_Interface
         {
             InitializeComponent();
         }
+        private void moveSidePanel(Control c)
+        {
+            selectedPanelIndicator.Height = c.Height;
+            selectedPanelIndicator.Top = c.Top;
+        }
+        private void buttonHome_Click(object sender, EventArgs e)
+        {
+            moveSidePanel(buttonHome);
+        }
+
+        private void buttonAccount_Click(object sender, EventArgs e)
+        {
+            moveSidePanel(buttonAccount); 
+        }
     }
 }
