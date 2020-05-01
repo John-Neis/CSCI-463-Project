@@ -60,11 +60,11 @@
     <Compile Include="Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
-    <Compile Include="MoneyHub.cs">
+    <Compile Include="MoneyHubClient.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MoneyHub.Designer.cs">
-      <DependentUpon>MoneyHub.cs</DependentUpon>
+    <Compile Include="MoneyHubClient.Designer.cs">
+      <DependentUpon>MoneyHubClient.cs</DependentUpon>
     </Compile>
     <Compile Include="Navigator.cs">
       <SubType>Form</SubType>
@@ -81,8 +81,8 @@
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MoneyHub.resx">
-      <DependentUpon>MoneyHub.cs</DependentUpon>
+    <EmbeddedResource Include="MoneyHubClient.resx">
+      <DependentUpon>MoneyHubClient.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Navigator.resx">
       <DependentUpon>Navigator.cs</DependentUpon>

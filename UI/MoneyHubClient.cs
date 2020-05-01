@@ -45,22 +45,26 @@ namespace MoneyHub_User_Interface
                 numberOfUsers++;
             }
             else
-            {
+            {            
                 //do something else or nothing for normal usage
+               
             }
             //common stuff to do on startup.
             this.upperSideBasePanel.Controls.Add(login.loginPanel);
-
+            //ON STARTUP: fill the currentUsers list with results from the database 
         }
         #endregion
 
         #region Create new Account
+        //This function switches the left panel to the account creation screen
         public void createAccount()
         {
             this.upperSideBasePanel.Controls.Add(accountCreator.accountCreatorPanel);
             accountCreator.accountCreatorPanel.Visible = true; 
             login.loginPanel.Visible = false;
+
         }
+        //once the user enters the information for the new account, the fields are validated.
         public void generateAccount()
         {
             validateFields();
@@ -68,7 +72,7 @@ namespace MoneyHub_User_Interface
         }
         //Validate Fields:
         //Function checks each of the fields in the account creator window
-        //Any fields that are empty will cause the field invalid flag to be set as
+        //Any fields that are empty will cause the overall invalid flag to be set as
         //well as the flag for that individual field.
         private void validateFields()
         {
@@ -87,6 +91,7 @@ namespace MoneyHub_User_Interface
             }
             else
             {
+                //TODO: this will need to be changed to send the new username to the database to see if it exists
                 for (int i = 0; i < numberOfUsers; i++)
                 {
                     if (users[i].username == temp)

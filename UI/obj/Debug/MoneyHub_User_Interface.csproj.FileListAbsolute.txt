@@ -57,3 +57,15 @@ D:\Repos\CSCI-463-Project\UX\obj\Debug\MoneyHub_User_Interface.Properties.Resour
 D:\Repos\CSCI-463-Project\UX\obj\Debug\MoneyHub_User_Interface.csproj.GenerateResource.cache
 D:\Repos\CSCI-463-Project\UX\obj\Debug\MoneyHub_User_Interface.exe
 D:\Repos\CSCI-463-Project\UX\obj\Debug\MoneyHub_User_Interface.pdb
+D:\UND\Classes\CSCI_463\CSCI-463-Project\UI\bin\Debug\MoneyHub_User_Interface.exe.config
+D:\UND\Classes\CSCI_463\CSCI-463-Project\UI\bin\Debug\MoneyHub_User_Interface.exe
+D:\UND\Classes\CSCI_463\CSCI-463-Project\UI\bin\Debug\MoneyHub_User_Interface.pdb
+D:\UND\Classes\CSCI_463\CSCI-463-Project\UI\obj\Debug\MoneyHub_User_Interface.csprojAssemblyReference.cache
+D:\UND\Classes\CSCI_463\CSCI-463-Project\UI\obj\Debug\MoneyHub_User_Interface.accountCreator.resources
+D:\UND\Classes\CSCI_463\CSCI-463-Project\UI\obj\Debug\MoneyHub_User_Interface.Login.resources
+D:\UND\Classes\CSCI_463\CSCI-463-Project\UI\obj\Debug\MoneyHub_User_Interface.MoneyHubHome.resources
+D:\UND\Classes\CSCI_463\CSCI-463-Project\UI\obj\Debug\MoneyHub_User_Interface.Navigator.resources
+D:\UND\Classes\CSCI_463\CSCI-463-Project\UI\obj\Debug\MoneyHub_User_Interface.Properties.Resources.resources
+D:\UND\Classes\CSCI_463\CSCI-463-Project\UI\obj\Debug\MoneyHub_User_Interface.csproj.GenerateResource.cache
+D:\UND\Classes\CSCI_463\CSCI-463-Project\UI\obj\Debug\MoneyHub_User_Interface.exe
+D:\UND\Classes\CSCI_463\CSCI-463-Project\UI\obj\Debug\MoneyHub_User_Interface.pdb
