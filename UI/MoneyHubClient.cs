@@ -9,6 +9,9 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Net;
+using System.Net.Sockets;
+using System.Text;
 
 namespace MoneyHub_User_Interface
 {
@@ -22,9 +25,15 @@ namespace MoneyHub_User_Interface
         //creation of the account creation state 
         static accountCreator accountCreator = new accountCreator();
         static Navigator menu = new Navigator();
-        
-        List <UserAccount> currentUsers = new List<UserAccount>();
-        static UserAccount currentUser;
+
+        public byte[] ip = { 24, 220, 156, 95 };
+        public int port = 1338;
+        public IPAddress ipAddr;
+        public IPEndPoint localEndPoint;
+        public Socket sender;
+
+        //List <UserAccount> currentUsers = new List<UserAccount>();
+        //static UserAccount currentUser;
         int numberOfUsers = 0;
         #endregion
         public MoneyHubHome()
@@ -40,9 +49,49 @@ namespace MoneyHub_User_Interface
                 // do anything special for developer config like creating a fake account for testing purposes
                 UserAccount test = new UserAccount("sam", "sam", "sdressler318@gmail.com", "7632631370", "Sam", "Dressler");
                 test.isAdmin = true;
-                currentUser = test;
-                currentUsers.Add(test);
+                //currentUser = test;
+                //currentUsers.Add(test);
                 numberOfUsers++;
+
+                try
+                {
+
+                    ipAddr = new IPAddress(ip);
+                    //Console.WriteLine(ipAddr.ToString());
+                    localEndPoint = new IPEndPoint(ipAddr, port);
+
+                    sender = new Socket(ipAddr.AddressFamily, SocketType.Stream, ProtocolType.Tcp);
+                    //Console.WriteLine(localEndPoint.Address);
+
+                    try
+                    {
+                        // Connect Socket to the remote
+                        // endpoint using method Connect()
+                        sender.Connect(localEndPoint);
+                        // We print EndPoint information
+                        // that we are connected
+                        Console.WriteLine("Socket connected to -> {0}", sender.RemoteEndPoint.ToString());
+
+                    }
+                    catch (ArgumentNullException ane)
+                    {
+                        Console.WriteLine("Argument null exception : {0}", ane.ToString());
+                    }
+                    catch (SocketException se)
+                    {
+                        Console.WriteLine("Socket exception : {0}", se.ToString());
+                    }
+                    catch (Exception e)
+                    {
+                        Console.WriteLine("Unexpected exception : {0}", e.ToString());
+                    }
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine(e.ToString());
+                }
+
+
             }
             else
             {            
@@ -67,6 +116,7 @@ namespace MoneyHub_User_Interface
         //once the user enters the information for the new account, the fields are validated.
         public void generateAccount()
         {
+            Console.WriteLine("Attempt to Create");
             validateFields();
             //add the function to generate the userID 31800000, 31800001
         }
@@ -81,9 +131,15 @@ namespace MoneyHub_User_Interface
             string temp;
             string temp2;
             int tempNumber;
+
+            string user = "";
+            string pwd = "";
+            string fname = "";
+            string lname = "";
             //username: invalid if username exists
-            UserAccount[] users = currentUsers.ToArray();
+            //UserAccount[] users = currentUsers.ToArray();
             temp = accountCreator.usernameTextBox.Text;
+            user = temp;
             if (string.IsNullOrEmpty(temp))
             {
                 accountCreator.invalid_username_flag.Visible = true;
@@ -94,19 +150,20 @@ namespace MoneyHub_User_Interface
                 //TODO: this will need to be changed to send the new username to the database to see if it exists
                 for (int i = 0; i < numberOfUsers; i++)
                 {
-                    if (users[i].username == temp)
-                    {
-                        accountCreator.invalid_username_flag.Visible = true;
-                        fieldInvalid = true;
+                    //if (users[i].username == temp)
+                    //{
+                        //accountCreator.invalid_username_flag.Visible = true;
+                        //fieldInvalid = true;
                         //posibly add a message for this error in specific
 
-                    }
+                    //}
                 }
             }
             //end username
 
             //firstname: must be a string
             temp = accountCreator.firstnameTextBox.Text;
+            fname = temp;
             if (string.IsNullOrEmpty(temp)) 
             { 
                 accountCreator.invalid_firstname_flag.Visible = true; 
@@ -123,6 +180,7 @@ namespace MoneyHub_User_Interface
             //end firstname
             //lastname: must be a string
             temp = accountCreator.lastnameTextBox.Text;
+            lname = temp;
             if (string.IsNullOrEmpty(temp))
             {
                 accountCreator.invalid_lastname_flag.Visible = true;
@@ -164,6 +222,7 @@ namespace MoneyHub_User_Interface
             //end phone number
             //validate password
             temp = accountCreator.passwordTextBox.Text;
+            pwd = temp;
             if (string.IsNullOrEmpty(temp))
             {
                 accountCreator.invalid_password_flag.Visible = true;
@@ -191,6 +250,15 @@ namespace MoneyHub_User_Interface
             {
                 accountCreator.invalidFieldsLabel.Visible = true;
             }
+            else
+            {
+            }
+
+            // Message code: 0
+            string serverMessage = "0 " + user + " " + pwd + " " + fname + " " + lname + "\n";
+            Console.WriteLine(serverMessage);
+            byte[] messageSent = Encoding.ASCII.GetBytes(serverMessage);
+            int byteSent = sender.Send(messageSent);
         }
         #region Event if account creation is cancelled
         public void cancelAccountCreation()
@@ -210,60 +278,53 @@ namespace MoneyHub_User_Interface
         #region Log user in
         public void logUserIn()
         {
-             validateUser();   
-            
+            Console.WriteLine("Pre-login");
+            validateUser();   
         }
         private void validateUser()
         {
+
             string uname = login.usernameTextBox.Text.Trim(' ');
             string pwd = login.passwordTextBox.Text.Trim(' ');
+            string serverMsg;
+
             bool usernameValid = false;
             bool pwdValid = false;
-            UserAccount[] users = currentUsers.ToArray();
-            int currentUserIndex = 0;
-            if(!string.IsNullOrEmpty(uname))
+            //UserAccount[] users = currentUsers.ToArray();
+            //int currentUserIndex = 0;
+            if (!string.IsNullOrEmpty(uname))
             {
-                for (int i = 0; i < users.Length; i++)
-                {
-                    if (users[i].username == uname)
-                    {
-                        usernameValid = true;
-                        currentUserIndex = i;
-                        login.usernamePasswordInvalidText.Visible = false;
-                    }
-                }
-                if(usernameValid == false)
-                {
-                    login.usernamePasswordInvalidText.Visible = true;
-                }
-                if (!string.IsNullOrEmpty(pwd))
-                {
-                    for (int i = 0; i < users.Length; i++)
-                    {
-                        if (users[i].userPassword == pwd)
-                        {
-                            pwdValid = true;
-                            currentUserIndex = i;
-                            login.usernamePasswordInvalidText.Visible = false;
-                        }
-                    }
-                    if(pwdValid == false)
-                    {
-                        login.usernamePasswordInvalidText.Visible = true;
-                    }
-                }
-                else
-                {
-                    login.usernamePasswordInvalidText.Visible = true;
-                }
+                // Message code: 1
+                serverMsg = "1 " + uname + " " + pwd + "\n";
+
+                // Creation of message that
+                // we will send to Server
+                byte[] messageSent = Encoding.ASCII.GetBytes(serverMsg);
+                int byteSent = sender.Send(messageSent);
+
+                byte[] messageReceived = new byte[1024];
+                int byteRecv = sender.Receive(messageReceived);
+                string reply = Encoding.ASCII.GetString(messageReceived, 0, byteRecv);
+
+                /*
+                    Note: The reply from the server follows a strict format.
+                    The first byte will be either 0 or 1. (1 is assuming database integrity)
+                    Each subsequent value will be delimited by ':'
+                    Database column names will be followed by "->", and the value of that records column will proceed.
+                    The final value of the string will be "NULL".
+                    In the case that the first byte is 0, the reply from the server will always be "0:NULL".
+                    This will indicate a bad login, and will be used to prompt the user to reenter their information.
+                 */
+
+                Console.WriteLine("From Server: " + reply);
             }
             else
             {
                 login.usernamePasswordInvalidText.Visible = true;
             }
-            if(pwdValid == true && usernameValid == true)
+            if (pwdValid == true && usernameValid == true)
             {
-                currentUser = users[currentUserIndex];
+                //currentUser = users[currentUserIndex];
                 Console.WriteLine(DateTime.Now + ": Login validated!");
                 login.loginPanel.Visible = false;
                 loginValidated();
@@ -281,7 +342,7 @@ namespace MoneyHub_User_Interface
             menu.navPanel.Visible = true;
             this.welcomeUserLabel.Visible = true;
             this.logoutPictureBox.Visible = true;
-            this.welcomeUserLabel.Text = "Welcome Back, " + currentUser.userFirstName;
+            //this.welcomeUserLabel.Text = "Welcome Back, " + currentUser.userFirstName;
         }
 
         #endregion
