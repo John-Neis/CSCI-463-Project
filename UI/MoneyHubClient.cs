@@ -29,9 +29,9 @@ namespace MoneyHub_User_Interface
         static Overview ov = new Overview();
 
         //Jack's IP
-        //public byte[] ip = { 24, 220, 156, 95 };
+        public byte[] ip = { 192, 168, 0, 15 };
         //Sam's IP
-        public byte[] ip = { 192, 168, 254, 20 };
+        //public byte[] ip = { 192, 168, 254, 20 };
         public int port = 1338;
         public IPAddress ipAddr;
         public IPEndPoint localEndPoint;
@@ -301,7 +301,7 @@ namespace MoneyHub_User_Interface
                     //pares server response
                     char[] response = reply.ToCharArray();
                     Console.WriteLine(DateTime.Now + ": Server Reply: " + reply);
-                    if (response[0] == '0')
+                    if (response[0] == '1')
                     {
                         Console.WriteLine(DateTime.Now + ": Login Attempt Succeeded");
                         currentUser.Username = uname;
@@ -485,12 +485,14 @@ namespace MoneyHub_User_Interface
         #region exit application
         private void pictureBox1_Click(object sender, EventArgs e)
         {
+
             const string message = "Close the applcation?";
             const string caption = "Exit Application";
             var result = MessageBox.Show(message, caption, MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
             if (result == DialogResult.Yes)
             {
+                
                 Application.Exit();
             }
         }

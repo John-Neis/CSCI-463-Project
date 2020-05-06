@@ -71,7 +71,6 @@ D:\UND\Classes\CSCI_463\CSCI-463-Project\UI\obj\Debug\MoneyHub_User_Interface.pd
 C:\Users\Jack\Desktop\CSCI 463\CSCI-463-Project\UI\obj\Debug\MoneyHub_User_Interface.csprojAssemblyReference.cache
 C:\Users\Jack\Desktop\CSCI 463\CSCI-463-Project\UI\obj\Debug\MoneyHub_User_Interface.accountCreator.resources
 C:\Users\Jack\Desktop\CSCI 463\CSCI-463-Project\UI\obj\Debug\MoneyHub_User_Interface.Login.resources
-C:\Users\Jack\Desktop\CSCI 463\CSCI-463-Project\UI\obj\Debug\MoneyHub_User_Interface.MoneyHubHome.resources
 C:\Users\Jack\Desktop\CSCI 463\CSCI-463-Project\UI\obj\Debug\MoneyHub_User_Interface.Navigator.resources
 C:\Users\Jack\Desktop\CSCI 463\CSCI-463-Project\UI\obj\Debug\MoneyHub_User_Interface.Properties.Resources.resources
 C:\Users\Jack\Desktop\CSCI 463\CSCI-463-Project\UI\obj\Debug\MoneyHub_User_Interface.csproj.GenerateResource.cache
@@ -83,3 +82,6 @@ C:\Users\Jack\Desktop\CSCI 463\CSCI-463-Project\UI\bin\Debug\MoneyHub_User_Inter
 D:\UND\Classes\CSCI_463\CSCI-463-Project\UI\obj\Debug\MoneyHub_User_Interface.Overview.resources
 D:\UND\Classes\CSCI_463\CSCI-463-Project\UI\obj\Debug\MoneyHub_User_Interface.MoneyHubForm.resources
 D:\UND\Classes\CSCI_463\CSCI-463-Project\UI\obj\Debug\MoneyHub_User_Interface.WelcomeForm.resources
+C:\Users\Jack\Desktop\CSCI 463\CSCI-463-Project\UI\obj\Debug\MoneyHub_User_Interface.MoneyHubForm.resources
+C:\Users\Jack\Desktop\CSCI 463\CSCI-463-Project\UI\obj\Debug\MoneyHub_User_Interface.Overview.resources
+C:\Users\Jack\Desktop\CSCI 463\CSCI-463-Project\UI\obj\Debug\MoneyHub_User_Interface.WelcomeForm.resources

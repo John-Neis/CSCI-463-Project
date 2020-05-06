@@ -27,7 +27,7 @@ public class ServerDriver {
 	}
 
 	public static boolean insertRecord(String[] data, Connection dbh) {
-		String sql = "insert into users values(NULL, " + data[1] + ", '" + data[2] + "', '" + data[3] + "', '" + data[4] + "');";
+		String sql = "insert into users values(NULL, '" + data[1] + "', '" + data[2] + "', '" + data[3] + "', '" + data[4] + "');";
 		System.out.println(sql);
 		try {
 			Statement stmnt = dbh.createStatement();
@@ -44,24 +44,18 @@ public class ServerDriver {
 		String user = data[1];
 		String pwd = data[2];
 
-		try {
-			Integer.parseInt(user);
-		} catch(NumberFormatException nfe) {
-			user = "-1";
-		}
-
 		System.out.println("Client user: " + user);
 		System.out.println("Client pwd:  " + pwd);
 
-		String sql = "select * from users where AccountNumber = " + user + " and Password = '" + pwd +"';";
+		String sql = "select * from users where UserName = '" + user + "' and Password = '" + pwd +"';";
 		System.out.println(sql);
 		int resultCount = -1;
 					
 		try {
 			rs = query(dbh, sql);
 			while(rs.next()) {
-				SQLResult += String.format("UserID: %d -- AcctNum: %d -- Pwd: %s -- f_name: %s -- l_name: %s\n", 
-						rs.getInt("UserID"), rs.getInt("AccountNumber"), rs.getString("Password"),
+				SQLResult += String.format("UserID: %d -- UserName: %s -- Pwd: %s -- f_name: %s -- l_name: %s\n", 
+						rs.getInt("UserID"), rs.getString("UserName"), rs.getString("Password"),
 						rs.getString("FirstName"), rs.getString("LastName")
 				);
 			}
@@ -82,12 +76,11 @@ public class ServerDriver {
 		}
 		reply += resultCount + ":";
 
-		sql = "select * from accounts where AccountNumber = " + user + ";";
+		sql = "select * from accounts where UserName = '" + user + "';";
 		try {
 			rs = query(dbh, sql);
 			while(rs.next()) {
-				reply += "AccountID->" + rs.getInt("AccountID") + ":";
-				reply += "AccountNumber->" + rs.getInt("AccountNumber") + ":";
+				reply += "UserName->" + rs.getString("UserName") + ":";
 				reply += "Type->" + rs.getString("Type") + ":";
 				reply += "Balance->" + rs.getFloat("Balance") + ":";
 			}
@@ -122,7 +115,7 @@ public class ServerDriver {
 			dbh = DriverManager.getConnection(
 					"jdbc:mysql://localhost:3306/bank", //?useSSL=false&autoReconnect=true",
 					"root",
-					"Magichawk17%"
+					"pass260word"
 			);			
 		} catch(Exception e) {
 			e.printStackTrace();
