@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.loginPanel = new System.Windows.Forms.Panel();
+            this.remeberUserCheckBox = new System.Windows.Forms.CheckBox();
             this.usernamePasswordInvalidText = new System.Windows.Forms.Label();
             this.createAccountForgotPasswordPanel = new System.Windows.Forms.Panel();
             this.forgotPasswordLink = new System.Windows.Forms.LinkLabel();
@@ -39,9 +40,10 @@
             this.buttonLogin = new System.Windows.Forms.Button();
             this.passwordLabel = new System.Windows.Forms.Label();
             this.usernameLabel = new System.Windows.Forms.Label();
-            this.remeberUserCheckBox = new System.Windows.Forms.CheckBox();
+            this.eventLog1 = new System.Diagnostics.EventLog();
             this.loginPanel.SuspendLayout();
             this.createAccountForgotPasswordPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.eventLog1)).BeginInit();
             this.SuspendLayout();
             // 
             // loginPanel
@@ -61,6 +63,20 @@
             this.loginPanel.Name = "loginPanel";
             this.loginPanel.Size = new System.Drawing.Size(265, 284);
             this.loginPanel.TabIndex = 4;
+            // 
+            // remeberUserCheckBox
+            // 
+            this.remeberUserCheckBox.AutoSize = true;
+            this.remeberUserCheckBox.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(40)))), ((int)(((byte)(60)))));
+            this.remeberUserCheckBox.FlatAppearance.CheckedBackColor = System.Drawing.Color.White;
+            this.remeberUserCheckBox.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.remeberUserCheckBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(150)))), ((int)(((byte)(230)))));
+            this.remeberUserCheckBox.Location = new System.Drawing.Point(21, 159);
+            this.remeberUserCheckBox.Name = "remeberUserCheckBox";
+            this.remeberUserCheckBox.Size = new System.Drawing.Size(145, 23);
+            this.remeberUserCheckBox.TabIndex = 8;
+            this.remeberUserCheckBox.Text = "Remeber Username";
+            this.remeberUserCheckBox.UseVisualStyleBackColor = true;
             // 
             // usernamePasswordInvalidText
             // 
@@ -186,19 +202,9 @@
             this.usernameLabel.Text = "Username:";
             this.usernameLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // remeberUserCheckBox
+            // eventLog1
             // 
-            this.remeberUserCheckBox.AutoSize = true;
-            this.remeberUserCheckBox.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(40)))), ((int)(((byte)(60)))));
-            this.remeberUserCheckBox.FlatAppearance.CheckedBackColor = System.Drawing.Color.White;
-            this.remeberUserCheckBox.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.remeberUserCheckBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(150)))), ((int)(((byte)(230)))));
-            this.remeberUserCheckBox.Location = new System.Drawing.Point(21, 159);
-            this.remeberUserCheckBox.Name = "remeberUserCheckBox";
-            this.remeberUserCheckBox.Size = new System.Drawing.Size(145, 23);
-            this.remeberUserCheckBox.TabIndex = 8;
-            this.remeberUserCheckBox.Text = "Remeber Username";
-            this.remeberUserCheckBox.UseVisualStyleBackColor = true;
+            this.eventLog1.SynchronizingObject = this;
             // 
             // Login
             // 
@@ -216,6 +222,7 @@
             this.loginPanel.PerformLayout();
             this.createAccountForgotPasswordPanel.ResumeLayout(false);
             this.createAccountForgotPasswordPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.eventLog1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -233,5 +240,6 @@
         public System.Windows.Forms.LinkLabel createAccountLink;
         public System.Windows.Forms.Label usernamePasswordInvalidText;
         public System.Windows.Forms.CheckBox remeberUserCheckBox;
+        private System.Diagnostics.EventLog eventLog1;
     }
 }

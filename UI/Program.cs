@@ -10,7 +10,7 @@ namespace MoneyHub_User_Interface
 
     static class Program
     {
-        public static MoneyHubHome mh;
+        public static MoneyHubForm mh;
         //Windows requires this
         [STAThread]
         //Enable console debug information to be visible
@@ -24,7 +24,7 @@ namespace MoneyHub_User_Interface
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             AttachConsole(ATTACH_PARENT_PROCESS);
-            mh = new MoneyHubHome();
+            mh = new MoneyHubForm();
             Application.Run(mh);
         }
     }

@@ -23,12 +23,20 @@ namespace MoneyHub_User_Interface
         }
         private void buttonHome_Click(object sender, EventArgs e)
         {
-            moveSidePanel(buttonHome);
+            moveSidePanel(buttonOverview);
+            Program.mh.showOverviewPanel();
         }
 
         private void buttonAccount_Click(object sender, EventArgs e)
         {
-            moveSidePanel(buttonAccount); 
+            moveSidePanel(buttonAccount);
+            Program.mh.showAccountsPanel();
+        }
+
+        private void buttonSetting_Click(object sender, EventArgs e)
+        {
+            moveSidePanel(buttonSettings);
+            Program.mh.showSettingsPanel();
         }
     }
 }

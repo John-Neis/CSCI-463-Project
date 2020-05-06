@@ -74,7 +74,6 @@ public class ServerDriver {
 		}
 		System.out.println("Record count: " + resultCount);
 		System.out.println(SQLResult);
-
 		String reply = "";
 		if(resultCount == 0) {
 			reply = "0:NULL";
@@ -123,7 +122,7 @@ public class ServerDriver {
 			dbh = DriverManager.getConnection(
 					"jdbc:mysql://localhost:3306/bank", //?useSSL=false&autoReconnect=true",
 					"root",
-					"pass260word"
+					"Magichawk17%"
 			);			
 		} catch(Exception e) {
 			e.printStackTrace();

@@ -9,11 +9,12 @@ namespace MoneyHub_User_Interface
     class Account
     {
         private int accountNumber = 0;
-        private string accountType; 
+        AccountTypeEnum_T accountType = 0;
         private int balance = 0;
         public Account()
         {
 
         }
+       
     }
 }

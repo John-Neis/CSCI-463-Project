@@ -17,7 +17,11 @@ namespace MoneyHub_User_Interface
         private string _userLastName = string.Empty;
         private int _UserID;
         private bool _isAdmin = false;
-
+        //Account of accounts 
+        private LinkedList<Account> _moneyHubAccounts = null;
+        private List<DateTime> _netWorthX;
+        private List<double> _netWorthY;
+        private double _netWorth;
         public UserAccount(string uname, string uPwd, string uemail, string uPhoneNum, string fname, string lname)
         {
             this._username = uname;
@@ -31,13 +35,32 @@ namespace MoneyHub_User_Interface
         }
         public UserAccount()
         {
-
+            
         }
         public void addAccount(AccountTypeEnum_T accountType)
         {
-
+            //Use linked list of accounts to manage all of the accounts
+            //creating an account will be a seperate function and will add more to this function
+            //moneyHubAccounts.AddLast();
+            
         }
-        public string username
+        //set of values for a users networth history
+        public double NetWorth
+        {
+            get { return this._netWorth; }
+            set { this._netWorth = value; }
+        }
+        public List<DateTime> NetWorthX
+        {
+            get { return this._netWorthX; }
+            set { this._netWorthX = value;  }
+        }
+        public List<double> NetWorthY
+        {
+            get { return this._netWorthY; }
+            set { this._netWorthY = value; }
+        }
+        public string Username
         {
             get { return this._username; }
             set { this._username = value; }
