@@ -87,9 +87,9 @@
             this.versionLabel.ForeColor = System.Drawing.SystemColors.ButtonShadow;
             this.versionLabel.Location = new System.Drawing.Point(3, 3);
             this.versionLabel.Name = "versionLabel";
-            this.versionLabel.Size = new System.Drawing.Size(90, 20);
+            this.versionLabel.Size = new System.Drawing.Size(233, 20);
             this.versionLabel.TabIndex = 0;
-            this.versionLabel.Text = "Version 2.0";
+            this.versionLabel.Text = "Version 3.0.finished_prototype";
             // 
             // upperSideBasePanel
             // 
@@ -230,6 +230,8 @@
             this.MoneyHubContentPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(40)))), ((int)(((byte)(60)))));
             this.MoneyHubContentPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.MoneyHubContentPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.MoneyHubContentPanel.Font = new System.Drawing.Font("Oxygen Mono", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MoneyHubContentPanel.ForeColor = System.Drawing.SystemColors.Control;
             this.MoneyHubContentPanel.Location = new System.Drawing.Point(0, 57);
             this.MoneyHubContentPanel.Margin = new System.Windows.Forms.Padding(4);
             this.MoneyHubContentPanel.Name = "MoneyHubContentPanel";

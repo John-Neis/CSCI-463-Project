@@ -33,9 +33,11 @@ namespace MoneyHub_User_Interface
         public static AccountSummaryForm asf = new AccountSummaryForm();
         public static SettingsForm sf = new SettingsForm();
         //Jack's IP
-        public byte[] ip = { 192, 168, 0, 15 };
+        // public byte[] ip = { 192, 168, 0, 15 };
         //Sam's IP
-        //public byte[] ip = { 192, 168, 254, 20 };
+        public byte[] ip = { 192, 168, 254, 20 };
+        //test IP
+        //public byte[] ip = { 24, 220, 156, 95 };
         public int port = 1338;
         public IPAddress ipAddr;
         public IPEndPoint localEndPoint;
@@ -374,16 +376,16 @@ namespace MoneyHub_User_Interface
         public void loadUserAccounts()
         {
             List<Account> accounts = new List<Account>();
-            Account a1 = new Account(123, 3500, "Checking");//checking
-            Account a2 = new Account(123, 10500, "Savings"); //savings
+            Account a1 = new Account(123, 3500.00, "Checking");//checking
+            Account a2 = new Account(123, 10500.00, "Savings"); //savings
             Account a3 = new Account(123, 3654.31, "Loan");//loan
             accounts.Add(a1);
             accounts.Add(a2);
             accounts.Add(a3);
             currentUser.Accounts = accounts;
-            currentUser.NetWorth = 10345.69;
             currentUser.TotalAssets = a1.Balance + a2.Balance;
             currentUser.TotalLiabilities = a3.Balance;
+            currentUser.NetWorth = currentUser.TotalAssets - currentUser.TotalLiabilities;
         }
         #endregion
 
@@ -417,12 +419,12 @@ namespace MoneyHub_User_Interface
             currentPage = "overview";
             this.MoneyHubContentPanel.Controls.Clear();
             this.MoneyHubContentPanel.Controls.Add(ov.overviewBasePanel);
-            populateOverviewFields();
+            populateAccountDetailsFields();
             showNetWorthHistory();
             generateNetWorthChart();       
             generateNetWorthStats();
         }
-        public void populateOverviewFields()
+        public void populateAccountDetailsFields()
         {
             //start with account fields 
             List<Account> accounts = currentUser.Accounts;
@@ -430,18 +432,27 @@ namespace MoneyHub_User_Interface
             {
                 if (accounts[i].AccountType.Equals("Checking"))
                 {
-                    ov.checkingAccountBalanceValue.Text = "$ " + accounts[i].Balance;
-                    nwbdf.checkingAccountBalanceValue.Text = "$ " + accounts[i].Balance;
+                    ov.checkingAccountBalanceValue.Text = "$" + accounts[i].Balance;
+                    nwbdf.checkingAccountBalanceValue.Text = "$" + accounts[i].Balance;
+                    asf.accountCheckingBalanceValue.Text = "$" + accounts[i].Balance;
+                    asf.accountCheckingDateOpened.Text = "3/18/2015";
+                    asf.accountCheckingAPYValue.Text = "%0.40";
                 }
                 else if (accounts[i].AccountType.Equals("Savings"))
                 {
-                    ov.SavingsAccountBalanceValue.Text = "$ " + accounts[i].Balance;
-                    nwbdf.savingsAccountBalanceValue.Text = "$ " + accounts[i].Balance;
+                    ov.SavingsAccountBalanceValue.Text = "$" + accounts[i].Balance;
+                    nwbdf.savingsAccountBalanceValue.Text = "$" + accounts[i].Balance;
+                    asf.accountSavingsBalanceValue.Text = "$" + accounts[i].Balance;
+                    asf.accountSavingsDateOpened.Text = "3/18/2015";
+                    asf.accountSavingsAPYValue.Text = "%1.38";
                 }
                 else if (accounts[i].AccountType.Equals("Loan"))
                 {
                     ov.loanBalanceValue.Text = "$ " + accounts[i].Balance;
                     nwbdf.loanAccountBalanceValue.Text = "$ " + accounts[i].Balance;
+                    asf.loanBalanceRemainingValue.Text = "$" + accounts[i].Balance;
+                    asf.loanDateTakenLabel.Text = "9/12/2017";
+                    asf.loanInterestRate.Text = "%4.23";
                 }
             }
             //fill the total asset field

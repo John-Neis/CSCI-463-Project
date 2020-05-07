@@ -109,3 +109,8 @@ C:\Users\Jack\Desktop\CSCI 463\CSCI-463-Project\UI\obj\Debug\MoneyHub_User_Inter
 C:\Users\Jack\Desktop\CSCI 463\CSCI-463-Project\UI\obj\Debug\MoneyHub_User_Interface.NetWorthBreakDownForm.resources
 C:\Users\Jack\Desktop\CSCI 463\CSCI-463-Project\UI\obj\Debug\MoneyHub_User_Interface.NetWorthHistoryForm.resources
 C:\Users\Jack\Desktop\CSCI 463\CSCI-463-Project\UI\obj\Debug\MoneyHub_User_Interface.SettingsForm.resources
+D:\UND\Classes\CSCI_463\CSCI-463-Project\UI\obj\Debug\MoneyHub_User_Interface.AccountCreatedForm.resources
+D:\UND\Classes\CSCI_463\CSCI-463-Project\UI\obj\Debug\MoneyHub_User_Interface.AccountSummaryForm.resources
+D:\UND\Classes\CSCI_463\CSCI-463-Project\UI\obj\Debug\MoneyHub_User_Interface.NetWorthBreakDownForm.resources
+D:\UND\Classes\CSCI_463\CSCI-463-Project\UI\obj\Debug\MoneyHub_User_Interface.NetWorthHistoryForm.resources
+D:\UND\Classes\CSCI_463\CSCI-463-Project\UI\obj\Debug\MoneyHub_User_Interface.SettingsForm.resources

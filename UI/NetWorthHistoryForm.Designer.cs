@@ -28,10 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea4 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend4 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Title title4 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title1 = new System.Windows.Forms.DataVisualization.Charting.Title();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(NetWorthHistoryForm));
             this.netWorthHistoryBasePanel = new System.Windows.Forms.Panel();
             this.netWorthStatsPanel = new System.Windows.Forms.Panel();
@@ -131,25 +131,25 @@
             // 
             // maxNetWorthDate
             // 
-            this.maxNetWorthDate.AutoSize = true;
             this.maxNetWorthDate.Font = new System.Drawing.Font("Oxygen Mono", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.maxNetWorthDate.ForeColor = System.Drawing.Color.Honeydew;
-            this.maxNetWorthDate.Location = new System.Drawing.Point(213, 250);
+            this.maxNetWorthDate.Location = new System.Drawing.Point(192, 250);
             this.maxNetWorthDate.Name = "maxNetWorthDate";
-            this.maxNetWorthDate.Size = new System.Drawing.Size(72, 18);
+            this.maxNetWorthDate.Size = new System.Drawing.Size(93, 18);
             this.maxNetWorthDate.TabIndex = 15;
-            this.maxNetWorthDate.Text = "--/--/--";
+            this.maxNetWorthDate.Text = "--/--/----";
+            this.maxNetWorthDate.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // minNetWorthDate
             // 
-            this.minNetWorthDate.AutoSize = true;
             this.minNetWorthDate.Font = new System.Drawing.Font("Oxygen Mono", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.minNetWorthDate.ForeColor = System.Drawing.Color.Honeydew;
-            this.minNetWorthDate.Location = new System.Drawing.Point(213, 194);
+            this.minNetWorthDate.Location = new System.Drawing.Point(189, 194);
             this.minNetWorthDate.Name = "minNetWorthDate";
-            this.minNetWorthDate.Size = new System.Drawing.Size(72, 18);
+            this.minNetWorthDate.Size = new System.Drawing.Size(96, 18);
             this.minNetWorthDate.TabIndex = 14;
-            this.minNetWorthDate.Text = "--/--/--";
+            this.minNetWorthDate.Text = "--/--/----";
+            this.minNetWorthDate.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // minNetWorthDateLabel
             // 
@@ -164,14 +164,14 @@
             // 
             // maxNetWorthValue
             // 
-            this.maxNetWorthValue.AutoSize = true;
             this.maxNetWorthValue.Font = new System.Drawing.Font("Oxygen Mono", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.maxNetWorthValue.ForeColor = System.Drawing.Color.Honeydew;
-            this.maxNetWorthValue.Location = new System.Drawing.Point(186, 222);
+            this.maxNetWorthValue.Location = new System.Drawing.Point(160, 222);
             this.maxNetWorthValue.Name = "maxNetWorthValue";
-            this.maxNetWorthValue.Size = new System.Drawing.Size(48, 18);
+            this.maxNetWorthValue.Size = new System.Drawing.Size(125, 18);
             this.maxNetWorthValue.TabIndex = 12;
             this.maxNetWorthValue.Text = "$0.00";
+            this.maxNetWorthValue.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // allTimeRadioButton
             // 
@@ -212,14 +212,14 @@
             // 
             // minNetWorthValue
             // 
-            this.minNetWorthValue.AutoSize = true;
             this.minNetWorthValue.Font = new System.Drawing.Font("Oxygen Mono", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.minNetWorthValue.ForeColor = System.Drawing.Color.Honeydew;
-            this.minNetWorthValue.Location = new System.Drawing.Point(186, 167);
+            this.minNetWorthValue.Location = new System.Drawing.Point(170, 167);
             this.minNetWorthValue.Name = "minNetWorthValue";
-            this.minNetWorthValue.Size = new System.Drawing.Size(48, 18);
+            this.minNetWorthValue.Size = new System.Drawing.Size(115, 18);
             this.minNetWorthValue.TabIndex = 11;
             this.minNetWorthValue.Text = "$0.00";
+            this.minNetWorthValue.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // oneYearRadioButton
             // 
@@ -260,14 +260,14 @@
             // 
             // averageGrowthValue
             // 
-            this.averageGrowthValue.AutoSize = true;
             this.averageGrowthValue.Font = new System.Drawing.Font("Oxygen Mono", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.averageGrowthValue.ForeColor = System.Drawing.Color.Honeydew;
-            this.averageGrowthValue.Location = new System.Drawing.Point(186, 137);
+            this.averageGrowthValue.Location = new System.Drawing.Point(154, 137);
             this.averageGrowthValue.Name = "averageGrowthValue";
-            this.averageGrowthValue.Size = new System.Drawing.Size(88, 18);
+            this.averageGrowthValue.Size = new System.Drawing.Size(131, 18);
             this.averageGrowthValue.TabIndex = 8;
             this.averageGrowthValue.Text = "$000.00/yr";
+            this.averageGrowthValue.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // AverageYearlyNetWorthGrowthLabel
             // 
@@ -282,14 +282,14 @@
             // 
             // totalNetWorthGrowthValue
             // 
-            this.totalNetWorthGrowthValue.AutoSize = true;
             this.totalNetWorthGrowthValue.Font = new System.Drawing.Font("Oxygen Mono", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.totalNetWorthGrowthValue.ForeColor = System.Drawing.Color.Honeydew;
-            this.totalNetWorthGrowthValue.Location = new System.Drawing.Point(186, 105);
+            this.totalNetWorthGrowthValue.Location = new System.Drawing.Point(181, 105);
             this.totalNetWorthGrowthValue.Name = "totalNetWorthGrowthValue";
-            this.totalNetWorthGrowthValue.Size = new System.Drawing.Size(48, 18);
+            this.totalNetWorthGrowthValue.Size = new System.Drawing.Size(104, 18);
             this.totalNetWorthGrowthValue.TabIndex = 6;
             this.totalNetWorthGrowthValue.Text = "$0.00";
+            this.totalNetWorthGrowthValue.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // netWorthGrowthLabel
             // 
@@ -304,14 +304,14 @@
             // 
             // timeElapsedValue
             // 
-            this.timeElapsedValue.AutoSize = true;
             this.timeElapsedValue.Font = new System.Drawing.Font("Oxygen Mono", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.timeElapsedValue.ForeColor = System.Drawing.Color.Honeydew;
-            this.timeElapsedValue.Location = new System.Drawing.Point(148, 72);
+            this.timeElapsedValue.Location = new System.Drawing.Point(140, 72);
             this.timeElapsedValue.Name = "timeElapsedValue";
-            this.timeElapsedValue.Size = new System.Drawing.Size(152, 18);
+            this.timeElapsedValue.Size = new System.Drawing.Size(160, 18);
             this.timeElapsedValue.TabIndex = 4;
             this.timeElapsedValue.Text = "0 years, 00 months";
+            this.timeElapsedValue.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // timeElapsedLabel
             // 
@@ -326,14 +326,14 @@
             // 
             // startDateValue
             // 
-            this.startDateValue.AutoSize = true;
             this.startDateValue.Font = new System.Drawing.Font("Oxygen Mono", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.startDateValue.ForeColor = System.Drawing.Color.Honeydew;
-            this.startDateValue.Location = new System.Drawing.Point(213, 41);
+            this.startDateValue.Location = new System.Drawing.Point(192, 41);
             this.startDateValue.Name = "startDateValue";
-            this.startDateValue.Size = new System.Drawing.Size(72, 18);
+            this.startDateValue.Size = new System.Drawing.Size(93, 18);
             this.startDateValue.TabIndex = 2;
-            this.startDateValue.Text = "--/--/--";
+            this.startDateValue.Text = "--/--/----";
+            this.startDateValue.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // netWorthTrackStart
             // 
@@ -399,32 +399,32 @@
             this.netWorthLineChart.BorderlineColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(40)))), ((int)(((byte)(60)))));
             this.netWorthLineChart.BorderlineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Dot;
             this.netWorthLineChart.BorderSkin.BackColor = System.Drawing.Color.White;
-            chartArea4.Name = "ChartArea1";
-            this.netWorthLineChart.ChartAreas.Add(chartArea4);
+            chartArea1.Name = "ChartArea1";
+            this.netWorthLineChart.ChartAreas.Add(chartArea1);
             this.netWorthLineChart.Dock = System.Windows.Forms.DockStyle.Fill;
-            legend4.Name = "Legend1";
-            this.netWorthLineChart.Legends.Add(legend4);
+            legend1.Name = "Legend1";
+            this.netWorthLineChart.Legends.Add(legend1);
             this.netWorthLineChart.Location = new System.Drawing.Point(0, 0);
             this.netWorthLineChart.Name = "netWorthLineChart";
             this.netWorthLineChart.PaletteCustomColors = new System.Drawing.Color[] {
         System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(40)))), ((int)(((byte)(60))))),
         System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(40)))), ((int)(((byte)(60))))),
         System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(60)))))};
-            series4.BorderColor = System.Drawing.Color.Turquoise;
-            series4.ChartArea = "ChartArea1";
-            series4.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            series4.Color = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            series4.Legend = "Legend1";
-            series4.Name = "NetWorth";
-            this.netWorthLineChart.Series.Add(series4);
+            series1.BorderColor = System.Drawing.Color.Turquoise;
+            series1.ChartArea = "ChartArea1";
+            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series1.Color = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            series1.Legend = "Legend1";
+            series1.Name = "NetWorth";
+            this.netWorthLineChart.Series.Add(series1);
             this.netWorthLineChart.Size = new System.Drawing.Size(755, 491);
             this.netWorthLineChart.TabIndex = 0;
             this.netWorthLineChart.Text = "Net Worth";
-            title4.Docking = System.Windows.Forms.DataVisualization.Charting.Docking.Bottom;
-            title4.Font = new System.Drawing.Font("Source Code Pro", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            title4.Name = "Net Worth In Dollars";
-            title4.Text = "Net Worth (USD)";
-            this.netWorthLineChart.Titles.Add(title4);
+            title1.Docking = System.Windows.Forms.DataVisualization.Charting.Docking.Bottom;
+            title1.Font = new System.Drawing.Font("Source Code Pro", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            title1.Name = "Net Worth In Dollars";
+            title1.Text = "Net Worth (USD)";
+            this.netWorthLineChart.Titles.Add(title1);
             // 
             // netWorthHeaderPanel
             // 

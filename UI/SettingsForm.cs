@@ -16,5 +16,15 @@ namespace MoneyHub_User_Interface
         {
             InitializeComponent();
         }
+
+        private void deleteAccountButton_MouseHover(object sender, EventArgs e)
+        {
+            this.alertPictureBox.Visible = true;
+        }
+
+        private void deleteAccountButton_MouseLeave(object sender, EventArgs e)
+        {
+            this.alertPictureBox.Visible = false;
+        }
     }
 }

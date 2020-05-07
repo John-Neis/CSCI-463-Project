@@ -29,6 +29,15 @@
         private void InitializeComponent()
         {
             this.accountCreatorPanel = new System.Windows.Forms.Panel();
+            this.invalidFieldsLabel = new System.Windows.Forms.Label();
+            this.invalid_password2_flag = new System.Windows.Forms.Panel();
+            this.panel8 = new System.Windows.Forms.Panel();
+            this.invalid_password_flag = new System.Windows.Forms.Panel();
+            this.invalid_phonenumber_flag = new System.Windows.Forms.Panel();
+            this.invalid_email_flag = new System.Windows.Forms.Panel();
+            this.invalid_lastname_flag = new System.Windows.Forms.Panel();
+            this.invalid_firstname_flag = new System.Windows.Forms.Panel();
+            this.invalid_username_flag = new System.Windows.Forms.Panel();
             this.enterLastnameLabel = new System.Windows.Forms.Label();
             this.lastnameTextBox = new System.Windows.Forms.TextBox();
             this.enterNameLabel = new System.Windows.Forms.Label();
@@ -46,15 +55,6 @@
             this.usernameTextBox = new System.Windows.Forms.TextBox();
             this.passwordLabel = new System.Windows.Forms.Label();
             this.buttonCreateAccount = new System.Windows.Forms.Button();
-            this.invalid_username_flag = new System.Windows.Forms.Panel();
-            this.invalid_firstname_flag = new System.Windows.Forms.Panel();
-            this.invalid_lastname_flag = new System.Windows.Forms.Panel();
-            this.invalid_email_flag = new System.Windows.Forms.Panel();
-            this.invalid_phonenumber_flag = new System.Windows.Forms.Panel();
-            this.invalid_password_flag = new System.Windows.Forms.Panel();
-            this.invalid_password2_flag = new System.Windows.Forms.Panel();
-            this.panel8 = new System.Windows.Forms.Panel();
-            this.invalidFieldsLabel = new System.Windows.Forms.Label();
             this.accountCreatorPanel.SuspendLayout();
             this.invalid_password2_flag.SuspendLayout();
             this.SuspendLayout();
@@ -92,6 +92,90 @@
             this.accountCreatorPanel.Name = "accountCreatorPanel";
             this.accountCreatorPanel.Size = new System.Drawing.Size(265, 875);
             this.accountCreatorPanel.TabIndex = 0;
+            // 
+            // invalidFieldsLabel
+            // 
+            this.invalidFieldsLabel.AutoSize = true;
+            this.invalidFieldsLabel.ForeColor = System.Drawing.Color.Red;
+            this.invalidFieldsLabel.Location = new System.Drawing.Point(8, 449);
+            this.invalidFieldsLabel.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.invalidFieldsLabel.Name = "invalidFieldsLabel";
+            this.invalidFieldsLabel.Size = new System.Drawing.Size(214, 19);
+            this.invalidFieldsLabel.TabIndex = 27;
+            this.invalidFieldsLabel.Text = "*Fields indicated in red are invalid";
+            this.invalidFieldsLabel.Visible = false;
+            // 
+            // invalid_password2_flag
+            // 
+            this.invalid_password2_flag.BackColor = System.Drawing.Color.Firebrick;
+            this.invalid_password2_flag.Controls.Add(this.panel8);
+            this.invalid_password2_flag.Location = new System.Drawing.Point(3, 418);
+            this.invalid_password2_flag.Name = "invalid_password2_flag";
+            this.invalid_password2_flag.Size = new System.Drawing.Size(10, 17);
+            this.invalid_password2_flag.TabIndex = 26;
+            this.invalid_password2_flag.Visible = false;
+            // 
+            // panel8
+            // 
+            this.panel8.BackColor = System.Drawing.Color.Firebrick;
+            this.panel8.Location = new System.Drawing.Point(0, 24);
+            this.panel8.Name = "panel8";
+            this.panel8.Size = new System.Drawing.Size(0, 0);
+            this.panel8.TabIndex = 26;
+            // 
+            // invalid_password_flag
+            // 
+            this.invalid_password_flag.BackColor = System.Drawing.Color.Firebrick;
+            this.invalid_password_flag.Location = new System.Drawing.Point(3, 362);
+            this.invalid_password_flag.Name = "invalid_password_flag";
+            this.invalid_password_flag.Size = new System.Drawing.Size(10, 17);
+            this.invalid_password_flag.TabIndex = 26;
+            this.invalid_password_flag.Visible = false;
+            // 
+            // invalid_phonenumber_flag
+            // 
+            this.invalid_phonenumber_flag.BackColor = System.Drawing.Color.Firebrick;
+            this.invalid_phonenumber_flag.Location = new System.Drawing.Point(3, 303);
+            this.invalid_phonenumber_flag.Name = "invalid_phonenumber_flag";
+            this.invalid_phonenumber_flag.Size = new System.Drawing.Size(10, 17);
+            this.invalid_phonenumber_flag.TabIndex = 26;
+            this.invalid_phonenumber_flag.Visible = false;
+            // 
+            // invalid_email_flag
+            // 
+            this.invalid_email_flag.BackColor = System.Drawing.Color.Firebrick;
+            this.invalid_email_flag.Location = new System.Drawing.Point(2, 247);
+            this.invalid_email_flag.Name = "invalid_email_flag";
+            this.invalid_email_flag.Size = new System.Drawing.Size(10, 17);
+            this.invalid_email_flag.TabIndex = 26;
+            this.invalid_email_flag.Visible = false;
+            // 
+            // invalid_lastname_flag
+            // 
+            this.invalid_lastname_flag.BackColor = System.Drawing.Color.Firebrick;
+            this.invalid_lastname_flag.Location = new System.Drawing.Point(2, 193);
+            this.invalid_lastname_flag.Name = "invalid_lastname_flag";
+            this.invalid_lastname_flag.Size = new System.Drawing.Size(10, 17);
+            this.invalid_lastname_flag.TabIndex = 26;
+            this.invalid_lastname_flag.Visible = false;
+            // 
+            // invalid_firstname_flag
+            // 
+            this.invalid_firstname_flag.BackColor = System.Drawing.Color.Firebrick;
+            this.invalid_firstname_flag.Location = new System.Drawing.Point(3, 136);
+            this.invalid_firstname_flag.Name = "invalid_firstname_flag";
+            this.invalid_firstname_flag.Size = new System.Drawing.Size(10, 17);
+            this.invalid_firstname_flag.TabIndex = 25;
+            this.invalid_firstname_flag.Visible = false;
+            // 
+            // invalid_username_flag
+            // 
+            this.invalid_username_flag.BackColor = System.Drawing.Color.Firebrick;
+            this.invalid_username_flag.Location = new System.Drawing.Point(2, 82);
+            this.invalid_username_flag.Name = "invalid_username_flag";
+            this.invalid_username_flag.Size = new System.Drawing.Size(10, 17);
+            this.invalid_username_flag.TabIndex = 24;
+            this.invalid_username_flag.Visible = false;
             // 
             // enterLastnameLabel
             // 
@@ -181,7 +265,7 @@
             // createAccountLabel
             // 
             this.createAccountLabel.AutoSize = true;
-            this.createAccountLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(40)))), ((int)(((byte)(80)))));
+            this.createAccountLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(40)))), ((int)(((byte)(60)))));
             this.createAccountLabel.Font = new System.Drawing.Font("Microsoft YaHei UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.createAccountLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(150)))), ((int)(((byte)(230)))));
             this.createAccountLabel.Location = new System.Drawing.Point(26, 9);
@@ -301,90 +385,6 @@
             this.buttonCreateAccount.Text = "Create Account";
             this.buttonCreateAccount.UseVisualStyleBackColor = true;
             this.buttonCreateAccount.Click += new System.EventHandler(this.buttonCreateAccount_Click);
-            // 
-            // invalid_username_flag
-            // 
-            this.invalid_username_flag.BackColor = System.Drawing.Color.Firebrick;
-            this.invalid_username_flag.Location = new System.Drawing.Point(2, 82);
-            this.invalid_username_flag.Name = "invalid_username_flag";
-            this.invalid_username_flag.Size = new System.Drawing.Size(10, 17);
-            this.invalid_username_flag.TabIndex = 24;
-            this.invalid_username_flag.Visible = false;
-            // 
-            // invalid_firstname_flag
-            // 
-            this.invalid_firstname_flag.BackColor = System.Drawing.Color.Firebrick;
-            this.invalid_firstname_flag.Location = new System.Drawing.Point(3, 136);
-            this.invalid_firstname_flag.Name = "invalid_firstname_flag";
-            this.invalid_firstname_flag.Size = new System.Drawing.Size(10, 17);
-            this.invalid_firstname_flag.TabIndex = 25;
-            this.invalid_firstname_flag.Visible = false;
-            // 
-            // invalid_lastname_flag
-            // 
-            this.invalid_lastname_flag.BackColor = System.Drawing.Color.Firebrick;
-            this.invalid_lastname_flag.Location = new System.Drawing.Point(2, 193);
-            this.invalid_lastname_flag.Name = "invalid_lastname_flag";
-            this.invalid_lastname_flag.Size = new System.Drawing.Size(10, 17);
-            this.invalid_lastname_flag.TabIndex = 26;
-            this.invalid_lastname_flag.Visible = false;
-            // 
-            // invalid_email_flag
-            // 
-            this.invalid_email_flag.BackColor = System.Drawing.Color.Firebrick;
-            this.invalid_email_flag.Location = new System.Drawing.Point(2, 247);
-            this.invalid_email_flag.Name = "invalid_email_flag";
-            this.invalid_email_flag.Size = new System.Drawing.Size(10, 17);
-            this.invalid_email_flag.TabIndex = 26;
-            this.invalid_email_flag.Visible = false;
-            // 
-            // invalid_phonenumber_flag
-            // 
-            this.invalid_phonenumber_flag.BackColor = System.Drawing.Color.Firebrick;
-            this.invalid_phonenumber_flag.Location = new System.Drawing.Point(3, 303);
-            this.invalid_phonenumber_flag.Name = "invalid_phonenumber_flag";
-            this.invalid_phonenumber_flag.Size = new System.Drawing.Size(10, 17);
-            this.invalid_phonenumber_flag.TabIndex = 26;
-            this.invalid_phonenumber_flag.Visible = false;
-            // 
-            // invalid_password_flag
-            // 
-            this.invalid_password_flag.BackColor = System.Drawing.Color.Firebrick;
-            this.invalid_password_flag.Location = new System.Drawing.Point(3, 362);
-            this.invalid_password_flag.Name = "invalid_password_flag";
-            this.invalid_password_flag.Size = new System.Drawing.Size(10, 17);
-            this.invalid_password_flag.TabIndex = 26;
-            this.invalid_password_flag.Visible = false;
-            // 
-            // invalid_password2_flag
-            // 
-            this.invalid_password2_flag.BackColor = System.Drawing.Color.Firebrick;
-            this.invalid_password2_flag.Controls.Add(this.panel8);
-            this.invalid_password2_flag.Location = new System.Drawing.Point(3, 418);
-            this.invalid_password2_flag.Name = "invalid_password2_flag";
-            this.invalid_password2_flag.Size = new System.Drawing.Size(10, 17);
-            this.invalid_password2_flag.TabIndex = 26;
-            this.invalid_password2_flag.Visible = false;
-            // 
-            // panel8
-            // 
-            this.panel8.BackColor = System.Drawing.Color.Firebrick;
-            this.panel8.Location = new System.Drawing.Point(0, 24);
-            this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(0, 0);
-            this.panel8.TabIndex = 26;
-            // 
-            // invalidFieldsLabel
-            // 
-            this.invalidFieldsLabel.AutoSize = true;
-            this.invalidFieldsLabel.ForeColor = System.Drawing.Color.Red;
-            this.invalidFieldsLabel.Location = new System.Drawing.Point(8, 449);
-            this.invalidFieldsLabel.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.invalidFieldsLabel.Name = "invalidFieldsLabel";
-            this.invalidFieldsLabel.Size = new System.Drawing.Size(214, 19);
-            this.invalidFieldsLabel.TabIndex = 27;
-            this.invalidFieldsLabel.Text = "*Fields indicated in red are invalid";
-            this.invalidFieldsLabel.Visible = false;
             // 
             // accountCreator
             // 

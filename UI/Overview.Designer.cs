@@ -33,40 +33,42 @@ namespace MoneyHub_User_Interface
             this.overviewBaseTLPanel = new System.Windows.Forms.TableLayoutPanel();
             this.accountSummarySectionPanel = new System.Windows.Forms.Panel();
             this.accountsSummaryTLPanel = new System.Windows.Forms.TableLayoutPanel();
-            this.overviewHeaderPanel = new System.Windows.Forms.Panel();
-            this.accountOverviewLabel = new System.Windows.Forms.Label();
-            this.checkingAccountLabel = new System.Windows.Forms.Label();
-            this.savingsAccountLabel = new System.Windows.Forms.Label();
-            this.accountSummaryPanel1 = new System.Windows.Forms.Panel();
-            this.accountSummaryPanel2 = new System.Windows.Forms.Panel();
-            this.accountSummaryLabel = new System.Windows.Forms.Label();
-            this.accountSummaryPB = new System.Windows.Forms.PictureBox();
-            this.accountSummaryHeaderPanel = new System.Windows.Forms.Panel();
-            this.checkingAccountBalanceValue = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.SavingsAccountBalanceValue = new System.Windows.Forms.Label();
-            this.seeCheckingDetailsButton = new System.Windows.Forms.Button();
-            this.seeSavingsDetailsButton = new System.Windows.Forms.Button();
-            this.overviewContentBasePanel = new System.Windows.Forms.Panel();
             this.loanAccountLabel = new System.Windows.Forms.Label();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.accountSummaryPanel2 = new System.Windows.Forms.Panel();
+            this.seeSavingsDetailsButton = new System.Windows.Forms.Button();
+            this.SavingsAccountBalanceValue = new System.Windows.Forms.Label();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.savingsAccountLabel = new System.Windows.Forms.Label();
+            this.checkingAccountLabel = new System.Windows.Forms.Label();
+            this.accountSummaryPanel1 = new System.Windows.Forms.Panel();
+            this.seeCheckingDetailsButton = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.checkingAccountBalanceValue = new System.Windows.Forms.Label();
             this.accountSummaryPanel3 = new System.Windows.Forms.Panel();
             this.seeLoanDetailsButton = new System.Windows.Forms.Button();
             this.loanBalanceValue = new System.Windows.Forms.Label();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.accountSummaryHeaderPanel = new System.Windows.Forms.Panel();
+            this.accountSummaryPB = new System.Windows.Forms.PictureBox();
+            this.accountSummaryLabel = new System.Windows.Forms.Label();
+            this.overviewContentBasePanel = new System.Windows.Forms.Panel();
+            this.overviewHeaderPanel = new System.Windows.Forms.Panel();
+            this.accountOverviewLabel = new System.Windows.Forms.Label();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.overviewBasePanel.SuspendLayout();
             this.overviewBaseTLPanel.SuspendLayout();
             this.accountSummarySectionPanel.SuspendLayout();
             this.accountsSummaryTLPanel.SuspendLayout();
-            this.overviewHeaderPanel.SuspendLayout();
-            this.accountSummaryPanel1.SuspendLayout();
             this.accountSummaryPanel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.accountSummaryPB)).BeginInit();
-            this.accountSummaryHeaderPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            this.accountSummaryPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.accountSummaryPanel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            this.accountSummaryHeaderPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.accountSummaryPB)).BeginInit();
+            this.overviewHeaderPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.SuspendLayout();
             // 
             // overviewBasePanel
@@ -139,60 +141,15 @@ namespace MoneyHub_User_Interface
             this.accountsSummaryTLPanel.Size = new System.Drawing.Size(1069, 207);
             this.accountsSummaryTLPanel.TabIndex = 4;
             // 
-            // overviewHeaderPanel
+            // loanAccountLabel
             // 
-            this.overviewHeaderPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(45)))), ((int)(((byte)(60)))));
-            this.overviewHeaderPanel.Controls.Add(this.accountOverviewLabel);
-            this.overviewHeaderPanel.Dock = System.Windows.Forms.DockStyle.Top;
-            this.overviewHeaderPanel.Font = new System.Drawing.Font("Oxygen Mono", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.overviewHeaderPanel.ForeColor = System.Drawing.SystemColors.Control;
-            this.overviewHeaderPanel.Location = new System.Drawing.Point(0, 0);
-            this.overviewHeaderPanel.Name = "overviewHeaderPanel";
-            this.overviewHeaderPanel.Size = new System.Drawing.Size(1077, 67);
-            this.overviewHeaderPanel.TabIndex = 1;
-            // 
-            // accountOverviewLabel
-            // 
-            this.accountOverviewLabel.AutoSize = true;
-            this.accountOverviewLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(45)))), ((int)(((byte)(60)))));
-            this.accountOverviewLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(200)))), ((int)(((byte)(80)))));
-            this.accountOverviewLabel.Location = new System.Drawing.Point(12, 9);
-            this.accountOverviewLabel.Name = "accountOverviewLabel";
-            this.accountOverviewLabel.Size = new System.Drawing.Size(462, 50);
-            this.accountOverviewLabel.TabIndex = 0;
-            this.accountOverviewLabel.Text = "My Financial Summary";
-            // 
-            // checkingAccountLabel
-            // 
-            this.checkingAccountLabel.AutoSize = true;
-            this.checkingAccountLabel.ForeColor = System.Drawing.Color.SeaGreen;
-            this.checkingAccountLabel.Location = new System.Drawing.Point(3, 0);
-            this.checkingAccountLabel.Name = "checkingAccountLabel";
-            this.checkingAccountLabel.Size = new System.Drawing.Size(220, 28);
-            this.checkingAccountLabel.TabIndex = 0;
-            this.checkingAccountLabel.Text = "Checking Account";
-            // 
-            // savingsAccountLabel
-            // 
-            this.savingsAccountLabel.AutoSize = true;
-            this.savingsAccountLabel.ForeColor = System.Drawing.Color.SeaGreen;
-            this.savingsAccountLabel.Location = new System.Drawing.Point(270, 0);
-            this.savingsAccountLabel.Name = "savingsAccountLabel";
-            this.savingsAccountLabel.Size = new System.Drawing.Size(207, 28);
-            this.savingsAccountLabel.TabIndex = 1;
-            this.savingsAccountLabel.Text = "Savings Account";
-            // 
-            // accountSummaryPanel1
-            // 
-            this.accountSummaryPanel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.accountSummaryPanel1.Controls.Add(this.seeCheckingDetailsButton);
-            this.accountSummaryPanel1.Controls.Add(this.pictureBox1);
-            this.accountSummaryPanel1.Controls.Add(this.checkingAccountBalanceValue);
-            this.accountSummaryPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.accountSummaryPanel1.Location = new System.Drawing.Point(3, 37);
-            this.accountSummaryPanel1.Name = "accountSummaryPanel1";
-            this.accountSummaryPanel1.Size = new System.Drawing.Size(261, 167);
-            this.accountSummaryPanel1.TabIndex = 2;
+            this.loanAccountLabel.AutoSize = true;
+            this.loanAccountLabel.ForeColor = System.Drawing.Color.SeaGreen;
+            this.loanAccountLabel.Location = new System.Drawing.Point(537, 0);
+            this.loanAccountLabel.Name = "loanAccountLabel";
+            this.loanAccountLabel.Size = new System.Drawing.Size(77, 28);
+            this.loanAccountLabel.TabIndex = 4;
+            this.loanAccountLabel.Text = "Loan ";
             // 
             // accountSummaryPanel2
             // 
@@ -206,66 +163,20 @@ namespace MoneyHub_User_Interface
             this.accountSummaryPanel2.Size = new System.Drawing.Size(261, 167);
             this.accountSummaryPanel2.TabIndex = 3;
             // 
-            // accountSummaryLabel
+            // seeSavingsDetailsButton
             // 
-            this.accountSummaryLabel.AutoSize = true;
-            this.accountSummaryLabel.Font = new System.Drawing.Font("Oxygen Mono", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.accountSummaryLabel.ForeColor = System.Drawing.SystemColors.Control;
-            this.accountSummaryLabel.Location = new System.Drawing.Point(14, 14);
-            this.accountSummaryLabel.Name = "accountSummaryLabel";
-            this.accountSummaryLabel.Size = new System.Drawing.Size(211, 33);
-            this.accountSummaryLabel.TabIndex = 4;
-            this.accountSummaryLabel.Text = "Account Briefs";
-            // 
-            // accountSummaryPB
-            // 
-            this.accountSummaryPB.Image = ((System.Drawing.Image)(resources.GetObject("accountSummaryPB.Image")));
-            this.accountSummaryPB.Location = new System.Drawing.Point(233, 3);
-            this.accountSummaryPB.Name = "accountSummaryPB";
-            this.accountSummaryPB.Size = new System.Drawing.Size(51, 49);
-            this.accountSummaryPB.TabIndex = 3;
-            this.accountSummaryPB.TabStop = false;
-            // 
-            // accountSummaryHeaderPanel
-            // 
-            this.accountSummaryHeaderPanel.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
-            this.accountSummaryHeaderPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(45)))), ((int)(((byte)(60)))));
-            this.accountSummaryHeaderPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.accountSummaryHeaderPanel.Controls.Add(this.accountSummaryPB);
-            this.accountSummaryHeaderPanel.Controls.Add(this.accountSummaryLabel);
-            this.accountSummaryHeaderPanel.Dock = System.Windows.Forms.DockStyle.Top;
-            this.accountSummaryHeaderPanel.Location = new System.Drawing.Point(0, 0);
-            this.accountSummaryHeaderPanel.Name = "accountSummaryHeaderPanel";
-            this.accountSummaryHeaderPanel.Size = new System.Drawing.Size(1069, 63);
-            this.accountSummaryHeaderPanel.TabIndex = 3;
-            // 
-            // checkingAccountBalanceValue
-            // 
-            this.checkingAccountBalanceValue.AutoSize = true;
-            this.checkingAccountBalanceValue.Font = new System.Drawing.Font("Oxygen Mono", 17.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkingAccountBalanceValue.Location = new System.Drawing.Point(72, 3);
-            this.checkingAccountBalanceValue.Name = "checkingAccountBalanceValue";
-            this.checkingAccountBalanceValue.Size = new System.Drawing.Size(98, 31);
-            this.checkingAccountBalanceValue.TabIndex = 0;
-            this.checkingAccountBalanceValue.Text = "$-1.00";
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(5, 3);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(61, 100);
-            this.pictureBox1.TabIndex = 1;
-            this.pictureBox1.TabStop = false;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(5, 3);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(64, 100);
-            this.pictureBox2.TabIndex = 2;
-            this.pictureBox2.TabStop = false;
+            this.seeSavingsDetailsButton.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.seeSavingsDetailsButton.FlatAppearance.BorderSize = 0;
+            this.seeSavingsDetailsButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(60)))));
+            this.seeSavingsDetailsButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(40)))), ((int)(((byte)(60)))));
+            this.seeSavingsDetailsButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.seeSavingsDetailsButton.Location = new System.Drawing.Point(0, 112);
+            this.seeSavingsDetailsButton.Name = "seeSavingsDetailsButton";
+            this.seeSavingsDetailsButton.Size = new System.Drawing.Size(259, 53);
+            this.seeSavingsDetailsButton.TabIndex = 3;
+            this.seeSavingsDetailsButton.Text = "See Details";
+            this.seeSavingsDetailsButton.UseVisualStyleBackColor = true;
+            this.seeSavingsDetailsButton.Click += new System.EventHandler(this.seeSavingsDetailsButton_Click);
             // 
             // SavingsAccountBalanceValue
             // 
@@ -277,9 +188,51 @@ namespace MoneyHub_User_Interface
             this.SavingsAccountBalanceValue.TabIndex = 2;
             this.SavingsAccountBalanceValue.Text = "$-1.00";
             // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(5, 3);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(64, 100);
+            this.pictureBox2.TabIndex = 2;
+            this.pictureBox2.TabStop = false;
+            // 
+            // savingsAccountLabel
+            // 
+            this.savingsAccountLabel.AutoSize = true;
+            this.savingsAccountLabel.ForeColor = System.Drawing.Color.SeaGreen;
+            this.savingsAccountLabel.Location = new System.Drawing.Point(270, 0);
+            this.savingsAccountLabel.Name = "savingsAccountLabel";
+            this.savingsAccountLabel.Size = new System.Drawing.Size(207, 28);
+            this.savingsAccountLabel.TabIndex = 1;
+            this.savingsAccountLabel.Text = "Savings Account";
+            // 
+            // checkingAccountLabel
+            // 
+            this.checkingAccountLabel.AutoSize = true;
+            this.checkingAccountLabel.ForeColor = System.Drawing.Color.SeaGreen;
+            this.checkingAccountLabel.Location = new System.Drawing.Point(3, 0);
+            this.checkingAccountLabel.Name = "checkingAccountLabel";
+            this.checkingAccountLabel.Size = new System.Drawing.Size(220, 28);
+            this.checkingAccountLabel.TabIndex = 0;
+            this.checkingAccountLabel.Text = "Checking Account";
+            // 
+            // accountSummaryPanel1
+            // 
+            this.accountSummaryPanel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.accountSummaryPanel1.Controls.Add(this.seeCheckingDetailsButton);
+            this.accountSummaryPanel1.Controls.Add(this.pictureBox1);
+            this.accountSummaryPanel1.Controls.Add(this.checkingAccountBalanceValue);
+            this.accountSummaryPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.accountSummaryPanel1.Location = new System.Drawing.Point(3, 37);
+            this.accountSummaryPanel1.Name = "accountSummaryPanel1";
+            this.accountSummaryPanel1.Size = new System.Drawing.Size(261, 167);
+            this.accountSummaryPanel1.TabIndex = 2;
+            // 
             // seeCheckingDetailsButton
             // 
             this.seeCheckingDetailsButton.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.seeCheckingDetailsButton.FlatAppearance.BorderSize = 0;
             this.seeCheckingDetailsButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(60)))));
             this.seeCheckingDetailsButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(40)))), ((int)(((byte)(60)))));
             this.seeCheckingDetailsButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -292,47 +245,24 @@ namespace MoneyHub_User_Interface
             this.seeCheckingDetailsButton.UseVisualStyleBackColor = true;
             this.seeCheckingDetailsButton.Click += new System.EventHandler(this.seeCheckingDetailsButton_Click);
             // 
-            // seeSavingsDetailsButton
+            // pictureBox1
             // 
-            this.seeSavingsDetailsButton.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.seeSavingsDetailsButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(60)))));
-            this.seeSavingsDetailsButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(40)))), ((int)(((byte)(60)))));
-            this.seeSavingsDetailsButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.seeSavingsDetailsButton.Location = new System.Drawing.Point(0, 112);
-            this.seeSavingsDetailsButton.Name = "seeSavingsDetailsButton";
-            this.seeSavingsDetailsButton.Size = new System.Drawing.Size(259, 53);
-            this.seeSavingsDetailsButton.TabIndex = 3;
-            this.seeSavingsDetailsButton.Text = "See Details";
-            this.seeSavingsDetailsButton.UseVisualStyleBackColor = true;
-            this.seeSavingsDetailsButton.Click += new System.EventHandler(this.seeSavingsDetailsButton_Click);
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(5, 3);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(61, 100);
+            this.pictureBox1.TabIndex = 1;
+            this.pictureBox1.TabStop = false;
             // 
-            // overviewContentBasePanel
+            // checkingAccountBalanceValue
             // 
-            this.overviewContentBasePanel.Font = new System.Drawing.Font("Oxygen Mono", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.overviewContentBasePanel.ForeColor = System.Drawing.SystemColors.Control;
-            this.overviewContentBasePanel.Location = new System.Drawing.Point(4, 4);
-            this.overviewContentBasePanel.Name = "overviewContentBasePanel";
-            this.overviewContentBasePanel.Size = new System.Drawing.Size(1069, 552);
-            this.overviewContentBasePanel.TabIndex = 5;
-            // 
-            // loanAccountLabel
-            // 
-            this.loanAccountLabel.AutoSize = true;
-            this.loanAccountLabel.ForeColor = System.Drawing.Color.SeaGreen;
-            this.loanAccountLabel.Location = new System.Drawing.Point(537, 0);
-            this.loanAccountLabel.Name = "loanAccountLabel";
-            this.loanAccountLabel.Size = new System.Drawing.Size(77, 28);
-            this.loanAccountLabel.TabIndex = 4;
-            this.loanAccountLabel.Text = "Loan ";
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(3, 3);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(56, 103);
-            this.pictureBox3.TabIndex = 4;
-            this.pictureBox3.TabStop = false;
+            this.checkingAccountBalanceValue.AutoSize = true;
+            this.checkingAccountBalanceValue.Font = new System.Drawing.Font("Oxygen Mono", 17.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkingAccountBalanceValue.Location = new System.Drawing.Point(72, 3);
+            this.checkingAccountBalanceValue.Name = "checkingAccountBalanceValue";
+            this.checkingAccountBalanceValue.Size = new System.Drawing.Size(98, 31);
+            this.checkingAccountBalanceValue.TabIndex = 0;
+            this.checkingAccountBalanceValue.Text = "$-1.00";
             // 
             // accountSummaryPanel3
             // 
@@ -347,6 +277,7 @@ namespace MoneyHub_User_Interface
             // 
             // seeLoanDetailsButton
             // 
+            this.seeLoanDetailsButton.FlatAppearance.BorderSize = 0;
             this.seeLoanDetailsButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(60)))));
             this.seeLoanDetailsButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(40)))), ((int)(((byte)(60)))));
             this.seeLoanDetailsButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -368,6 +299,90 @@ namespace MoneyHub_User_Interface
             this.loanBalanceValue.TabIndex = 2;
             this.loanBalanceValue.Text = "$-1.00";
             // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
+            this.pictureBox3.Location = new System.Drawing.Point(3, 3);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(56, 103);
+            this.pictureBox3.TabIndex = 4;
+            this.pictureBox3.TabStop = false;
+            // 
+            // accountSummaryHeaderPanel
+            // 
+            this.accountSummaryHeaderPanel.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
+            this.accountSummaryHeaderPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(45)))), ((int)(((byte)(80)))));
+            this.accountSummaryHeaderPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.accountSummaryHeaderPanel.Controls.Add(this.accountSummaryPB);
+            this.accountSummaryHeaderPanel.Controls.Add(this.accountSummaryLabel);
+            this.accountSummaryHeaderPanel.Dock = System.Windows.Forms.DockStyle.Top;
+            this.accountSummaryHeaderPanel.Location = new System.Drawing.Point(0, 0);
+            this.accountSummaryHeaderPanel.Name = "accountSummaryHeaderPanel";
+            this.accountSummaryHeaderPanel.Size = new System.Drawing.Size(1069, 63);
+            this.accountSummaryHeaderPanel.TabIndex = 3;
+            // 
+            // accountSummaryPB
+            // 
+            this.accountSummaryPB.Image = ((System.Drawing.Image)(resources.GetObject("accountSummaryPB.Image")));
+            this.accountSummaryPB.Location = new System.Drawing.Point(233, 3);
+            this.accountSummaryPB.Name = "accountSummaryPB";
+            this.accountSummaryPB.Size = new System.Drawing.Size(51, 49);
+            this.accountSummaryPB.TabIndex = 3;
+            this.accountSummaryPB.TabStop = false;
+            // 
+            // accountSummaryLabel
+            // 
+            this.accountSummaryLabel.AutoSize = true;
+            this.accountSummaryLabel.Font = new System.Drawing.Font("Oxygen Mono", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.accountSummaryLabel.ForeColor = System.Drawing.SystemColors.Control;
+            this.accountSummaryLabel.Location = new System.Drawing.Point(14, 14);
+            this.accountSummaryLabel.Name = "accountSummaryLabel";
+            this.accountSummaryLabel.Size = new System.Drawing.Size(211, 33);
+            this.accountSummaryLabel.TabIndex = 4;
+            this.accountSummaryLabel.Text = "Account Briefs";
+            // 
+            // overviewContentBasePanel
+            // 
+            this.overviewContentBasePanel.Font = new System.Drawing.Font("Oxygen Mono", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.overviewContentBasePanel.ForeColor = System.Drawing.SystemColors.Control;
+            this.overviewContentBasePanel.Location = new System.Drawing.Point(4, 4);
+            this.overviewContentBasePanel.Name = "overviewContentBasePanel";
+            this.overviewContentBasePanel.Size = new System.Drawing.Size(1069, 552);
+            this.overviewContentBasePanel.TabIndex = 5;
+            // 
+            // overviewHeaderPanel
+            // 
+            this.overviewHeaderPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(45)))), ((int)(((byte)(80)))));
+            this.overviewHeaderPanel.Controls.Add(this.pictureBox4);
+            this.overviewHeaderPanel.Controls.Add(this.accountOverviewLabel);
+            this.overviewHeaderPanel.Dock = System.Windows.Forms.DockStyle.Top;
+            this.overviewHeaderPanel.Font = new System.Drawing.Font("Oxygen Mono", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.overviewHeaderPanel.ForeColor = System.Drawing.SystemColors.Control;
+            this.overviewHeaderPanel.Location = new System.Drawing.Point(0, 0);
+            this.overviewHeaderPanel.Name = "overviewHeaderPanel";
+            this.overviewHeaderPanel.Size = new System.Drawing.Size(1077, 67);
+            this.overviewHeaderPanel.TabIndex = 1;
+            // 
+            // accountOverviewLabel
+            // 
+            this.accountOverviewLabel.AutoSize = true;
+            this.accountOverviewLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(45)))), ((int)(((byte)(80)))));
+            this.accountOverviewLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(200)))), ((int)(((byte)(80)))));
+            this.accountOverviewLabel.Location = new System.Drawing.Point(12, 9);
+            this.accountOverviewLabel.Name = "accountOverviewLabel";
+            this.accountOverviewLabel.Size = new System.Drawing.Size(462, 50);
+            this.accountOverviewLabel.TabIndex = 0;
+            this.accountOverviewLabel.Text = "My Financial Summary";
+            // 
+            // pictureBox4
+            // 
+            this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
+            this.pictureBox4.Location = new System.Drawing.Point(480, 9);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(55, 50);
+            this.pictureBox4.TabIndex = 1;
+            this.pictureBox4.TabStop = false;
+            // 
             // Overview
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -383,20 +398,21 @@ namespace MoneyHub_User_Interface
             this.accountSummarySectionPanel.ResumeLayout(false);
             this.accountsSummaryTLPanel.ResumeLayout(false);
             this.accountsSummaryTLPanel.PerformLayout();
-            this.overviewHeaderPanel.ResumeLayout(false);
-            this.overviewHeaderPanel.PerformLayout();
-            this.accountSummaryPanel1.ResumeLayout(false);
-            this.accountSummaryPanel1.PerformLayout();
             this.accountSummaryPanel2.ResumeLayout(false);
             this.accountSummaryPanel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.accountSummaryPB)).EndInit();
-            this.accountSummaryHeaderPanel.ResumeLayout(false);
-            this.accountSummaryHeaderPanel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            this.accountSummaryPanel1.ResumeLayout(false);
+            this.accountSummaryPanel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.accountSummaryPanel3.ResumeLayout(false);
             this.accountSummaryPanel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            this.accountSummaryHeaderPanel.ResumeLayout(false);
+            this.accountSummaryHeaderPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.accountSummaryPB)).EndInit();
+            this.overviewHeaderPanel.ResumeLayout(false);
+            this.overviewHeaderPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -427,5 +443,6 @@ namespace MoneyHub_User_Interface
         private System.Windows.Forms.Button seeLoanDetailsButton;
         public System.Windows.Forms.Label loanBalanceValue;
         private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.PictureBox pictureBox4;
     }
 }

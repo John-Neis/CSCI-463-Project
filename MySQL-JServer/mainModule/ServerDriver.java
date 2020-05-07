@@ -138,8 +138,8 @@ public class ServerDriver {
 			dbh = DriverManager.getConnection(
 					"jdbc:mysql://localhost:3306/bank", //?useSSL=false&autoReconnect=true",
 					"root",
-					//"Magichawk17%"
-					"pass260word"
+					"Magichawk17%"
+					//"pass260word"
 			);			
 		}
 		 catch(Exception e) {

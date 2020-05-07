@@ -16,5 +16,6 @@ namespace MoneyHub_User_Interface
         {
             InitializeComponent();
         }
+
     }
 }

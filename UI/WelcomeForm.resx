@@ -5404,7 +5404,12 @@
 </value>
   </data>
   <data name="richTextBox1.Text" xml:space="preserve">
-    <value>5/6/20
+    <value>5/5/20
+--Added accounts descriptions to accounts page
+--Added design and concepts to Settings page
+--Net worth is now calculated using account values
+5/6/20
+--Charts now update to show values of current accounts
 --various UI design changes
 --account creation now handles response form server
 5/5/20
@@ -5414,5 +5419,4 @@
 -- Added timestamps to console outputs
 -- Now only one mode of running program for development</value>
   </data>
-
 </root>
