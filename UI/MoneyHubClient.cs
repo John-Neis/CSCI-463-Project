@@ -19,19 +19,23 @@ namespace MoneyHub_User_Interface
     {
         #region define global variables
         //used for testing, 1 is dev mode, 0 is production.
-        static int mode = 0;
+        //static int mode = 0;
         //creation of login instance for startup
         static Login login = new Login();
         //creation of the account creation state 
-        static accountCreator accountCreator = new accountCreator();
-        static WelcomeForm wf = new WelcomeForm();
-        static Navigator menu = new Navigator();
-        static Overview ov = new Overview();
-
+        public static accountCreator accountCreator = new accountCreator();
+        public static WelcomeForm wf = new WelcomeForm();
+        public static Navigator menu = new Navigator();
+        public static Overview ov = new Overview();
+        public static AccountCreatedForm acf = new AccountCreatedForm();
+        public static NetWorthHistoryForm nwhf = new NetWorthHistoryForm();
+        public static NetWorthBreakDownForm nwbdf = new NetWorthBreakDownForm();
+        public static AccountSummaryForm asf = new AccountSummaryForm();
+        public static SettingsForm sf = new SettingsForm();
         //Jack's IP
-        public byte[] ip = { 192, 168, 0, 15 };
+        //public byte[] ip = { 192, 168, 0, 15 };
         //Sam's IP
-        //public byte[] ip = { 192, 168, 254, 20 };
+        public byte[] ip = { 192, 168, 254, 20 };
         public int port = 1338;
         public IPAddress ipAddr;
         public IPEndPoint localEndPoint;
@@ -102,7 +106,7 @@ namespace MoneyHub_User_Interface
         //once the user enters the information for the new account, the fields are validated.
         public void generateAccount()
         {
-            Console.WriteLine("Attempt to Create");
+            Console.WriteLine(DateTime.Now+": Attemping to create account");
             validateFields();
             //add the function to generate the userID 31800000, 31800001
         }
@@ -113,80 +117,67 @@ namespace MoneyHub_User_Interface
         private void validateFields()
         {
             accountCreator.clearFlags();
-            bool fieldInvalid = false;
-            string temp;
+            bool fieldsInvalid = false;
+            string tempString;
             string temp2;
             //int tempNumber;
 
-            string user = "";
-            string pwd = "";
-            string fname = "";
-            string lname = "";
+            string user;
+            string pwd;
+            string fname ;
+            string lname;
             //username: invalid if username exists
             //UserAccount[] users = currentUsers.ToArray();
-            temp = accountCreator.usernameTextBox.Text;
-            user = temp;
-            if (string.IsNullOrEmpty(temp))
+            tempString = accountCreator.usernameTextBox.Text;
+            user = tempString;
+            if (string.IsNullOrEmpty(tempString))
             {
                 accountCreator.invalid_username_flag.Visible = true;
-                fieldInvalid = true;
-            }
-            else
-            {
-                /*for (int i = 0; i < numberOfUsers; i++)
-                {
-                    //if (users[i].username == temp)
-                    //{
-                        //accountCreator.invalid_username_flag.Visible = true;
-                        //fieldInvalid = true;
-                        //posibly add a message for this error in specific
-
-                    //}
-                }*/
+                fieldsInvalid = true;
             }
             //end username
 
             //firstname: must be a string
-            temp = accountCreator.firstnameTextBox.Text;
-            fname = temp;
-            if (string.IsNullOrEmpty(temp)) 
+            tempString = accountCreator.firstnameTextBox.Text;
+            fname = tempString;
+            if (string.IsNullOrEmpty(tempString)) 
             { 
                 accountCreator.invalid_firstname_flag.Visible = true; 
-                fieldInvalid = true; 
+                fieldsInvalid = true; 
             }
             else
             {
-                if (isAlpha(temp) == false)
+                if (isAlpha(tempString) == false)
                 {
                     accountCreator.invalid_firstname_flag.Visible = true;
-                    fieldInvalid = true;
+                    fieldsInvalid = true;
                 }
             }
             //end firstname
             //lastname: must be a string
-            temp = accountCreator.lastnameTextBox.Text;
-            lname = temp;
-            if (string.IsNullOrEmpty(temp))
+            tempString = accountCreator.lastnameTextBox.Text;
+            lname = tempString;
+            if (string.IsNullOrEmpty(tempString))
             {
                 accountCreator.invalid_lastname_flag.Visible = true;
-                fieldInvalid = true;
+                fieldsInvalid = true;
             }
             else
             {
-                if (isAlpha(temp) == false)
+                if (isAlpha(tempString) == false)
                 {
                     accountCreator.invalid_lastname_flag.Visible = true;
-                    fieldInvalid = true;
+                    fieldsInvalid = true;
                 }
 
             }
             //end lastname
             //validate email: 
-            temp = accountCreator.emailTextBox.Text;
-            if (string.IsNullOrEmpty(temp))
+            tempString = accountCreator.emailTextBox.Text;
+            if (string.IsNullOrEmpty(tempString))
             {
                 accountCreator.invalid_email_flag.Visible = true;
-                fieldInvalid = true;
+                fieldsInvalid = true;
             }
             else
             {
@@ -194,11 +185,11 @@ namespace MoneyHub_User_Interface
             }
             //end email
             //validate phonenumber
-            temp = accountCreator.phoneNumberTextBox.Text;
-            if(string.IsNullOrEmpty(temp))
+            tempString = accountCreator.phoneNumberTextBox.Text;
+            if(string.IsNullOrEmpty(tempString))
             {
                 accountCreator.invalid_phonenumber_flag.Visible = true;
-                fieldInvalid = true;
+                fieldsInvalid = true;
             }
             else
             {
@@ -206,45 +197,74 @@ namespace MoneyHub_User_Interface
             }
             //end phone number
             //validate password
-            temp = accountCreator.passwordTextBox.Text;
-            pwd = temp;
-            if (string.IsNullOrEmpty(temp))
+            tempString = accountCreator.passwordTextBox.Text;
+            temp2 = accountCreator.confirmPasswordTextBox.Text;
+            pwd = tempString;
+            if (string.IsNullOrEmpty(tempString) || string.IsNullOrEmpty(temp2))
             {
                 accountCreator.invalid_password_flag.Visible = true;
-                fieldInvalid = true;
-            }
-            else
-            {
-                //validate password
-            }
-            //confirm the second password is the same as the first password
-            temp2 = accountCreator.confirmPasswordTextBox.Text;
-            if (string.IsNullOrEmpty(temp2))
-            {
                 accountCreator.invalid_password2_flag.Visible = true;
-                fieldInvalid = true;
+                fieldsInvalid = true;
             }
             else
             {
-                //validate password2
+                //confirm the second password is the same as the first password
+                if (!tempString.Equals(temp2))
+                {
+                    accountCreator.invalid_password_flag.Visible = true;
+                    accountCreator.invalid_password2_flag.Visible = true;
+                    fieldsInvalid = true;
+                }
             }
             
 
             //Check if any of the fields are invalid and then display the message
-            if (fieldInvalid == true)
+            if (fieldsInvalid == true)
             {
                 accountCreator.invalidFieldsLabel.Visible = true;
             }
+            //If none of the fields are invalid, send a request to the database
             else
             {
+                // Message code: 0 - Meaning the request is to add a user to the users database;
+                string serverMessage = "0 " + user + " " + pwd + " " + fname + " " + lname + "\n";
+                Console.WriteLine(serverMessage);
+                byte[] messageSent = Encoding.ASCII.GetBytes(serverMessage);
+                int byteSent = sender.Send(messageSent);
+                byte[] messageReceived = new byte[1024];
+                int byteRecv = sender.Receive(messageReceived);
+                string reply = Encoding.ASCII.GetString(messageReceived, 0, byteRecv);
+                char[] response = reply.ToCharArray();
+                Console.WriteLine(DateTime.Now + ": Server Reply: " + reply);
+                if (response[0] == '1')
+                {
+                    Console.WriteLine(DateTime.Now + ": Account Created Succssefully!");
+                    accountCreationSucceeded();
+                }
+                else
+                {
+                    Console.WriteLine(DateTime.Now + ": Account Creation Failed!");
+                    login.usernamePasswordInvalidText.Visible = true;
+                }
             }
 
-            // Message code: 0
-            string serverMessage = "0 " + user + " " + pwd + " " + fname + " " + lname + "\n";
-            Console.WriteLine(serverMessage);
-            byte[] messageSent = Encoding.ASCII.GetBytes(serverMessage);
-            int byteSent = sender.Send(messageSent);
         }
+        #region Acount Created Successfully
+        public void accountCreationSucceeded()
+        {
+            this.upperSideBasePanel.Controls.Clear();
+            this.upperSideBasePanel.Controls.Add(acf.accountCreatedBaseTLPanel);
+            acf.accountCreatedBaseTLPanel.Visible = true;
+        }
+        #endregion
+        #region show login panel function
+        public void showLogin()
+        {
+            this.upperSideBasePanel.Controls.Clear();
+            this.upperSideBasePanel.Controls.Add(login.loginPanel);
+            login.loginPanel.Visible = true;
+        }
+        #endregion
         #region Event if account creation is cancelled
         public void cancelAccountCreation()
         {
@@ -305,7 +325,6 @@ namespace MoneyHub_User_Interface
                     {
                         Console.WriteLine(DateTime.Now + ": Login Attempt Succeeded");
                         currentUser.Username = uname;
-                        currentUser.NetWorth = 10345.23;
                         //Don't set the password in the currentUser's userAccount object since its not needed
 
                         loginValidated();
@@ -346,9 +365,26 @@ namespace MoneyHub_User_Interface
             this.welcomeUserLabel.Visible = true;
             this.logoutPictureBox.Visible = true;
             this.welcomeUserLabel.Text = "Welcome Back, " + currentUser.Username;
+            loadUserAccounts();
             showOverviewPanel();
         }
+        #endregion
 
+        #region load user Accounts form DB
+        public void loadUserAccounts()
+        {
+            List<Account> accounts = new List<Account>();
+            Account a1 = new Account(123, 3500, "Checking");//checking
+            Account a2 = new Account(123, 10500, "Savings"); //savings
+            Account a3 = new Account(123, 3654.31, "Loan");//loan
+            accounts.Add(a1);
+            accounts.Add(a2);
+            accounts.Add(a3);
+            currentUser.Accounts = accounts;
+            currentUser.NetWorth = 10345.69;
+            currentUser.TotalAssets = a1.Balance + a2.Balance;
+            currentUser.TotalLiabilities = a3.Balance;
+        }
         #endregion
 
         #region Log user out
@@ -375,15 +411,62 @@ namespace MoneyHub_User_Interface
         }
         #endregion
 
-        #region Show Overview 
+        #region Relating to Overview 
+        public void showOverviewPanel()
+        {
+            currentPage = "overview";
+            this.MoneyHubContentPanel.Controls.Clear();
+            this.MoneyHubContentPanel.Controls.Add(ov.overviewBasePanel);
+            populateOverviewFields();
+            showNetWorthHistory();
+            generateNetWorthChart();       
+            generateNetWorthStats();
+        }
+        public void populateOverviewFields()
+        {
+            //start with account fields 
+            List<Account> accounts = currentUser.Accounts;
+            for(int i = 0; i < accounts.Count; i++)
+            {
+                if (accounts[i].AccountType.Equals("Checking"))
+                {
+                    ov.checkingAccountBalanceValue.Text = "$ " + accounts[i].Balance;
+                    nwbdf.checkingAccountBalanceValue.Text = "$ " + accounts[i].Balance;
+                }
+                else if (accounts[i].AccountType.Equals("Savings"))
+                {
+                    ov.SavingsAccountBalanceValue.Text = "$ " + accounts[i].Balance;
+                    nwbdf.savingsAccountBalanceValue.Text = "$ " + accounts[i].Balance;
+                }
+                else if (accounts[i].AccountType.Equals("Loan"))
+                {
+                    ov.loanBalanceValue.Text = "$ " + accounts[i].Balance;
+                    nwbdf.loanAccountBalanceValue.Text = "$ " + accounts[i].Balance;
+                }
+            }
+            //fill the total asset field
+            nwbdf.totalNetWorthValue.Text = "$ " + currentUser.NetWorth;
+            nwbdf.totalAssetsValue.Text = "$ " + currentUser.TotalAssets;
+             
+        }
         public void generateNetWorthChart()
         {
             //xvalues for dates
             List<DateTime> xValues = new List<DateTime>();
             //yvalues for dollar values
             List<double> yValues = new List<double>();
+
+            xValues.Add(new DateTime(2014, 11, 6));
+            yValues.Add(543.17);
+
+            xValues.Add(new DateTime(2015, 4, 20));
+            yValues.Add(834.69);
+
+            xValues.Add(new DateTime(2016, 8, 23));
+            yValues.Add(1465.96);
+
             xValues.Add(new DateTime(2017, 3, 18));
-            yValues.Add(5040.32);
+            yValues.Add(2040.32);
 
             xValues.Add(new DateTime(2018, 1, 8));
             yValues.Add(1473.91);
@@ -402,66 +485,204 @@ namespace MoneyHub_User_Interface
 
             xValues.Add(new DateTime(2020, 4, 5));
             yValues.Add(6340.30);
+
+            xValues.Add(DateTime.Today);
+            yValues.Add(currentUser.NetWorth);
+            
             currentUser.NetWorthX = xValues;
             currentUser.NetWorthY = yValues;
             //One year worth of data is default
             setOneYearScaling();
         }
+        #region Scaling Options for Chart
         public void setOneYearScaling()
         {
-           // List<DateTime> x = currentUser.NetWorthX;
-           // List<double> y = currentUser.NetWorthY;
-            ////To get just the recent year values, take the current date and compare it to each of the dates
-            //// in the given list
-           // DateTime currentDate = DateTime.Now;
-           // Console.WriteLine("Current Date: "+currentDate);
-            //Console.WriteLine("Date we are plotting from then on: "+currentDate.AddYears(-1));
-            //List<DateTime> tempx = new List<DateTime>();
-            //List<Double> tempy = new List<double>();
-            //for (int i = 0; i < tempx.Count; i++)
-            //{
-            //    Console.WriteLine(i);
-            //    Console.WriteLine("here");
-            //    Console.WriteLine(x[i]);
-            //    Console.WriteLine(y[i]);
-            //    if (x[i].CompareTo(currentDate.AddYears(-1)) >= 0)
-            //    {
-            //        tempx.Add(x[i]);
-            //        tempy.Add(y[i]);
-            //    }
-            //}
-            ov.netWorthChart.Series["NetWorth"].Points.DataBindXY(currentUser.NetWorthX, currentUser.NetWorthY);
-            ov.netWorthChart.ChartAreas[0].AxisX.MajorGrid.LineColor = Color.DarkRed;
-            ov.netWorthChart.ChartAreas[0].AxisY.MajorGrid.LineColor = Color.DarkRed;
-            ov.netWorthChart.Series["NetWorth"].Color = Color.FromArgb(20,40,60);
-            ov.netWorthChart.ChartAreas[0].AxisX.Interval = 3.0;
-            ov.netWorthChart.ChartAreas[0].AxisX.IntervalType = DateTimeIntervalType.Months;
-            ov.netWorthChart.ChartAreas[0].AxisX.LabelStyle.Format = "MM/dd/yyyy";
-            ov.netWorthChart.Invalidate();
+            List<DateTime> x = currentUser.NetWorthX;
+            List<double> y = currentUser.NetWorthY;
+            //To get just the recent year values, take the current date and compare it to each of the dates
+            // in the given list
+            DateTime currentDate = DateTime.Now;
+            List<DateTime> tempx = new List<DateTime>();
+            List<Double> tempy = new List<double>();
+            int timeDiff = 0;
+            for(int i=0; i< x.Count; i++)
+            {
+                timeDiff = GetMonthsBetween(x[i], DateTime.Today);
+                if ( timeDiff <= 12)
+                {
+                    tempx.Add(x[i]);
+                    tempy.Add(y[i]);
+                }
+            }
+            nwhf.netWorthLineChart.Series["NetWorth"].Points.DataBindXY(tempx,tempy);
+
+            nwhf.netWorthLineChart.ChartAreas[0].AxisX.MajorGrid.LineColor = Color.DarkRed;
+            nwhf.netWorthLineChart.ChartAreas[0].AxisY.MajorGrid.LineColor = Color.DarkRed;
+            nwhf.netWorthLineChart.Series["NetWorth"].Color = Color.FromArgb(20,40,60);
+            nwhf.netWorthLineChart.ChartAreas[0].AxisX.IsMarginVisible = false;
+            nwhf.netWorthLineChart.ChartAreas[0].AxisX.Interval = 1.0;
+            nwhf.netWorthLineChart.ChartAreas[0].AxisX.IntervalType = DateTimeIntervalType.Months;
+            nwhf.netWorthLineChart.ChartAreas[0].AxisX.LabelStyle.Format = "MM/dd/yyyy";
+            nwhf.netWorthLineChart.Invalidate();
         }
-        public void showOverviewPanel()
+        public void setThreeYearScaling()
         {
-            currentPage = "overview";
-            this.MoneyHubContentPanel.Controls.Clear();
-            this.MoneyHubContentPanel.Controls.Add(ov.overviewBasePanel);
-            ov.netWorthValue.Text = "$" + currentUser.NetWorth.ToString();
-            generateNetWorthChart();
-            Console.WriteLine("here");
+            List<DateTime> x = currentUser.NetWorthX;
+            List<double> y = currentUser.NetWorthY;
+            //To get just the recent year values, take the current date and compare it to each of the dates
+            // in the given list
+            DateTime currentDate = DateTime.Now;
+            List<DateTime> tempx = new List<DateTime>();
+            List<Double> tempy = new List<double>();
+            int timeDiff = 0;
+            for (int i = 0; i < x.Count; i++)
+            {
+                timeDiff = GetMonthsBetween(x[i], DateTime.Today);
+                if (timeDiff <= 36)
+                {
+                    tempx.Add(x[i]);
+                    tempy.Add(y[i]);
+                }
+            }
+            nwhf.netWorthLineChart.Series["NetWorth"].Points.DataBindXY(tempx, tempy);
+
+            nwhf.netWorthLineChart.ChartAreas[0].AxisX.MajorGrid.LineColor = Color.DarkRed;
+            nwhf.netWorthLineChart.ChartAreas[0].AxisY.MajorGrid.LineColor = Color.DarkRed;
+            nwhf.netWorthLineChart.Series["NetWorth"].Color = Color.FromArgb(20, 40, 60);
+            nwhf.netWorthLineChart.ChartAreas[0].AxisX.IsMarginVisible = false;
+            nwhf.netWorthLineChart.ChartAreas[0].AxisX.Interval = 2.0;
+            nwhf.netWorthLineChart.ChartAreas[0].AxisX.IntervalType = DateTimeIntervalType.Months;
+            nwhf.netWorthLineChart.ChartAreas[0].AxisX.LabelStyle.Format = "MM/dd/yyyy";
+            nwhf.netWorthLineChart.Invalidate();
+        }
+        public void setAllTimeScaling()
+        {
+            nwhf.netWorthLineChart.Series["NetWorth"].Points.DataBindXY(currentUser.NetWorthX, currentUser.NetWorthY);
+
+            nwhf.netWorthLineChart.ChartAreas[0].AxisX.MajorGrid.LineColor = Color.DarkRed;
+            nwhf.netWorthLineChart.ChartAreas[0].AxisY.MajorGrid.LineColor = Color.DarkRed;
+            nwhf.netWorthLineChart.Series["NetWorth"].Color = Color.FromArgb(20, 40, 60);
+            nwhf.netWorthLineChart.ChartAreas[0].AxisX.IsMarginVisible = false;
+            nwhf.netWorthLineChart.ChartAreas[0].AxisX.Interval = 3.0;
+            nwhf.netWorthLineChart.ChartAreas[0].AxisX.IntervalType = DateTimeIntervalType.Months;
+            nwhf.netWorthLineChart.ChartAreas[0].AxisX.LabelStyle.Format = "MM/dd/yyyy";
+            nwhf.netWorthLineChart.Invalidate();
         }
         #endregion
+        #region Generate NetWorthHistoryStats
+        public void generateNetWorthStats()
+        {
+            double currentNetWorth = currentUser.NetWorth;
+            List<DateTime> dates = currentUser.NetWorthX;
+            List<double> values = currentUser.NetWorthY;
+            //Need to set: 1. Date started tracking NetWorth, 2. Time Since then, 3. NetWorth Gains/Losses since first date, 4. Avg Yearly growth %/yr 
+            //5. Minimum Net Worth, 6. Maximum Net Worth;
+            //Start Date
+            nwhf.startDateValue.Text = dates[0].Month.ToString()+"/"+dates[0].Day.ToString()+"/"+dates[0].Year.ToString();
+            //time since then
+            int temp = GetMonthsBetween(dates[0], DateTime.Today);
+            int monthsElapsed = temp % 12;
+            int yearsElapsed = temp / 12;
+            nwhf.timeElapsedValue.Text = yearsElapsed+" Years "+monthsElapsed +" Months";
+            //calc Gains or Losses
+            double startAmount = values[0];
+            double difference = currentUser.NetWorth - startAmount;
+            if (difference > 0)
+            {
+                nwhf.totalNetWorthGrowthValue.Text = "$ " + difference;
+            }
+            else
+            {
+                nwhf.totalNetWorthGrowthValue.Text = "$ -" + difference;
+            }
+            //Find avg yearly difference
+            nwhf.averageGrowthValue.Text = "$ " + (difference / yearsElapsed)+"/yr";
+            //find min and find max
+            double max = values[0];
+            double min = values[0];
+            DateTime minDate = dates[0];
+            DateTime maxDate = dates[0];
+            for(int i = 0; i < dates.Count; i++)
+            {
+                if (values[i] < min)
+                {
+                    min = values[i];
+                    minDate = dates[i];
+                }
+                if(values[i]> max)
+                {
+                    max = values[i];
+                    maxDate = dates[i];
+                }
+            }
+            nwhf.maxNetWorthValue.Text = "$ " + max;
+            nwhf.minNetWorthValue.Text = "$ " + min;
+            nwhf.minNetWorthDate.Text = minDate.Month.ToString() + "/" + minDate.Day.ToString() + "/" + minDate.Year.ToString();
+            nwhf.maxNetWorthDate.Text = maxDate.Month.ToString() + "/" + maxDate.Day.ToString() + "/" + maxDate.Year.ToString();
+        }
+        #endregion
+        #region Show the NetWorth Breakdown
+        public void showNetWorthBreakDown()
+        {
+            nwbdf.netWorthValue.Text = "$" + currentUser.NetWorth.ToString();
+            ov.overviewContentBasePanel.Controls.Clear();
+            ov.overviewContentBasePanel.Controls.Add(nwbdf.netWorthBreakDownBasePanel);
+        }
+        #endregion
+        #region Show Net Worth History
+        public void showNetWorthHistory()
+        {
+            nwhf.netWorthValue.Text = "$" + currentUser.NetWorth.ToString();
+            ov.overviewContentBasePanel.Controls.Clear();
+            ov.overviewContentBasePanel.Controls.Add(nwhf.netWorthHistoryBasePanel);
+        }
+        #endregion
+        #endregion
+
         #region Show Accounts 
         public void showAccountsPanel()
         {
             currentPage = "accounts";
             this.MoneyHubContentPanel.Controls.Clear();
-            //this.appBasePanel.Controls.
+            this.MoneyHubContentPanel.Controls.Add(asf.accountSummaryBasePanel);
+            generateDoughnutChart();
+        }
+        public void generateDoughnutChart()
+        {
+
+            List<Account> accounts = currentUser.Accounts;
+            List<String> assetAccountTypes = new List<string>();
+            List<double> assetAccountBalances = new List<double>();
+            List<String> liabilityAccountTypes = new List<string>();
+            List<double> liabilityAccountBalances = new List<double>();
+            for (int i = 0; i < accounts.Count; i++)
+            {
+                if (!accounts[i].AccountType.Equals("Loan"))
+                {
+                    assetAccountTypes.Add(accounts[i].AccountType);
+                    assetAccountBalances.Add(accounts[i].Balance);
+                }
+                else
+                {
+                    liabilityAccountTypes.Add(accounts[i].AccountType);
+                    liabilityAccountBalances.Add(accounts[i].Balance);
+                }
+            }
+             asf.assetDoughnutChart.Series["Assets"].IsValueShownAsLabel = true;
+             asf.assetDoughnutChart.Series["Assets"].Points.DataBindXY(assetAccountTypes, assetAccountBalances);
+            asf.liabilityDoughnutChart.Series["Liabilities"].IsValueShownAsLabel = true;
+            asf.liabilityDoughnutChart.Series["Liabilities"].Points.DataBindXY(liabilityAccountTypes, liabilityAccountBalances);
+            //nwbdf.netWorthDoughnutChart.Series["Net Worth"].Points.AddXY("Checking", (currentUser.NetWorth - 3500.43));
+            // nwbdf.netWorthDoughnutChart.Series["Net Worth"].Points.AddXY("Checking", (-3500.43 + currentUser.NetWorth));
         }
         #endregion
+
         #region Show settings
         public void showSettingsPanel()
         {
             currentPage = "settings";
             this.MoneyHubContentPanel.Controls.Clear();
+            this.MoneyHubContentPanel.Controls.Add(sf.settingsFormBasePanel);
         }
         #endregion
 
@@ -498,7 +719,23 @@ namespace MoneyHub_User_Interface
         }
 
         #endregion
+        #region get months between two dates
+        public static int GetMonthsBetween(DateTime from, DateTime to)
+        {
+            if (from > to) return GetMonthsBetween(to, from);
 
+            var monthDiff = Math.Abs((to.Year * 12 + (to.Month - 1)) - (from.Year * 12 + (from.Month - 1)));
+
+            if (from.AddMonths(monthDiff) > to || to.Day < from.Day)
+            {
+                return monthDiff - 1;
+            }
+            else
+            {
+                return monthDiff;
+            }
+        }
+        #endregion
         #endregion
     }
 }

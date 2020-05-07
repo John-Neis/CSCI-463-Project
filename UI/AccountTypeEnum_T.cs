@@ -8,10 +8,11 @@ namespace MoneyHub_User_Interface
 {
     enum AccountTypeEnum_T
     {
-        defaultType = 0,
-        savings = 1,
-        checking = 2,
-        investment = 3,
+        AccountTypeEnum_defaultType = 0,
+        AccountTypeEnum_savings = 1,
+        AccountTypeEnum_checking = 2,
+        AccountTypeEnum_investment = 3,
+        AccountTypeEnum_loan = 4
 
     }
 }

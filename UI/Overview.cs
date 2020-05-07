@@ -16,5 +16,23 @@ namespace MoneyHub_User_Interface
         {
             InitializeComponent();
         }
+        Navigator n = new Navigator();
+        private void seeCheckingDetailsButton_Click(object sender, EventArgs e)
+        {
+            n.moveSidePanel(n.buttonAccount);
+            Program.mh.showAccountsPanel();
+        }
+
+        private void seeSavingsDetailsButton_Click(object sender, EventArgs e)
+        {
+            n.moveSidePanel(n.buttonAccount);
+            Program.mh.showAccountsPanel();
+        }
+
+        private void seeLoanDetailsButton_Click(object sender, EventArgs e)
+        {
+            n.moveSidePanel(n.buttonAccount);
+            Program.mh.showAccountsPanel();
+        }
     }
 }

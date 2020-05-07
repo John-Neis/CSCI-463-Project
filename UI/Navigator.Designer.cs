@@ -31,9 +31,9 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Navigator));
             this.buttonOverview = new System.Windows.Forms.Button();
             this.navPanel = new System.Windows.Forms.Panel();
+            this.buttonSettings = new System.Windows.Forms.Button();
             this.selectedPanelIndicator = new System.Windows.Forms.Panel();
             this.buttonAccount = new System.Windows.Forms.Button();
-            this.buttonSettings = new System.Windows.Forms.Button();
             this.navPanel.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -69,6 +69,25 @@
             this.navPanel.Size = new System.Drawing.Size(265, 875);
             this.navPanel.TabIndex = 5;
             // 
+            // buttonSettings
+            // 
+            this.buttonSettings.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(40)))), ((int)(((byte)(60)))));
+            this.buttonSettings.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(40)))), ((int)(((byte)(60)))));
+            this.buttonSettings.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.buttonSettings.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
+            this.buttonSettings.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonSettings.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonSettings.ForeColor = System.Drawing.Color.White;
+            this.buttonSettings.Image = ((System.Drawing.Image)(resources.GetObject("buttonSettings.Image")));
+            this.buttonSettings.Location = new System.Drawing.Point(13, 157);
+            this.buttonSettings.Name = "buttonSettings";
+            this.buttonSettings.Size = new System.Drawing.Size(252, 71);
+            this.buttonSettings.TabIndex = 5;
+            this.buttonSettings.Text = "  Settings";
+            this.buttonSettings.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.buttonSettings.UseVisualStyleBackColor = false;
+            this.buttonSettings.Click += new System.EventHandler(this.buttonSetting_Click);
+            // 
             // selectedPanelIndicator
             // 
             this.selectedPanelIndicator.BackColor = System.Drawing.Color.Olive;
@@ -96,25 +115,6 @@
             this.buttonAccount.UseVisualStyleBackColor = false;
             this.buttonAccount.Click += new System.EventHandler(this.buttonAccount_Click);
             // 
-            // buttonSettings
-            // 
-            this.buttonSettings.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(40)))), ((int)(((byte)(60)))));
-            this.buttonSettings.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(40)))), ((int)(((byte)(60)))));
-            this.buttonSettings.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.buttonSettings.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
-            this.buttonSettings.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonSettings.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonSettings.ForeColor = System.Drawing.Color.White;
-            this.buttonSettings.Image = ((System.Drawing.Image)(resources.GetObject("buttonSettings.Image")));
-            this.buttonSettings.Location = new System.Drawing.Point(13, 157);
-            this.buttonSettings.Name = "buttonSettings";
-            this.buttonSettings.Size = new System.Drawing.Size(252, 71);
-            this.buttonSettings.TabIndex = 5;
-            this.buttonSettings.Text = "  Settings";
-            this.buttonSettings.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.buttonSettings.UseVisualStyleBackColor = false;
-            this.buttonSettings.Click += new System.EventHandler(this.buttonSetting_Click);
-            // 
             // Navigator
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -133,8 +133,8 @@
         #endregion
         public System.Windows.Forms.Panel navPanel;
         public System.Windows.Forms.Button buttonOverview;
-        private System.Windows.Forms.Panel selectedPanelIndicator;
         public System.Windows.Forms.Button buttonAccount;
         public System.Windows.Forms.Button buttonSettings;
+        public System.Windows.Forms.Panel selectedPanelIndicator;
     }
 }

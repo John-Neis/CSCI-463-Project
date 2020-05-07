@@ -16,7 +16,7 @@ namespace MoneyHub_User_Interface
         {
             InitializeComponent();
         }
-        private void moveSidePanel(Control c)
+        public void moveSidePanel(Control c)
         {
             selectedPanelIndicator.Height = c.Height;
             selectedPanelIndicator.Top = c.Top;

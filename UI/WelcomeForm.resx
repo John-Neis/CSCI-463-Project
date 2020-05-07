@@ -5404,12 +5404,14 @@
 </value>
   </data>
   <data name="richTextBox1.Text" xml:space="preserve">
-    <value>-- Added background image and revision history box 
+    <value>5/6/20
+--various UI design changes
+--account creation now handles response form server
+5/5/20
+-- Added background image and revision history box 
 -- Database is now used to validate user logins
 -- Modified program to maintain modularity with each new page
 -- Added timestamps to console outputs
--- Now only one mode of running program for development
-
-</value>
+-- Now only one mode of running program for development</value>
   </data>
 </root>

@@ -38,11 +38,11 @@
             this.MoneyHubLabel = new System.Windows.Forms.Label();
             this.navBarPanel = new System.Windows.Forms.Panel();
             this.welcomeUserPanel = new System.Windows.Forms.Panel();
-            this.welcomeUserLabel = new System.Windows.Forms.Label();
             this.appControlTLPanel = new System.Windows.Forms.TableLayoutPanel();
-            this.logoutPictureBox = new System.Windows.Forms.PictureBox();
-            this.minimizePictureBox = new System.Windows.Forms.PictureBox();
             this.exitPictureBox = new System.Windows.Forms.PictureBox();
+            this.minimizePictureBox = new System.Windows.Forms.PictureBox();
+            this.logoutPictureBox = new System.Windows.Forms.PictureBox();
+            this.welcomeUserLabel = new System.Windows.Forms.Label();
             this.MoneyHubContentPanel = new System.Windows.Forms.Panel();
             this.MoneyHubBasePanel = new System.Windows.Forms.Panel();
             this.optionsPanelBase.SuspendLayout();
@@ -52,9 +52,9 @@
             this.navBarPanel.SuspendLayout();
             this.welcomeUserPanel.SuspendLayout();
             this.appControlTLPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.logoutPictureBox)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.minimizePictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.exitPictureBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.minimizePictureBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.logoutPictureBox)).BeginInit();
             this.MoneyHubBasePanel.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -157,18 +157,6 @@
             this.welcomeUserPanel.Size = new System.Drawing.Size(1076, 57);
             this.welcomeUserPanel.TabIndex = 3;
             // 
-            // welcomeUserLabel
-            // 
-            this.welcomeUserLabel.AutoSize = true;
-            this.welcomeUserLabel.Font = new System.Drawing.Font("Source Code Pro", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.welcomeUserLabel.ForeColor = System.Drawing.Color.White;
-            this.welcomeUserLabel.Location = new System.Drawing.Point(3, 9);
-            this.welcomeUserLabel.Name = "welcomeUserLabel";
-            this.welcomeUserLabel.Size = new System.Drawing.Size(143, 34);
-            this.welcomeUserLabel.TabIndex = 0;
-            this.welcomeUserLabel.Text = "Welcome,\r\n";
-            this.welcomeUserLabel.Visible = false;
-            // 
             // appControlTLPanel
             // 
             this.appControlTLPanel.ColumnCount = 3;
@@ -187,6 +175,30 @@
             this.appControlTLPanel.Size = new System.Drawing.Size(117, 55);
             this.appControlTLPanel.TabIndex = 5;
             // 
+            // exitPictureBox
+            // 
+            this.exitPictureBox.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.exitPictureBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.exitPictureBox.Image = ((System.Drawing.Image)(resources.GetObject("exitPictureBox.Image")));
+            this.exitPictureBox.Location = new System.Drawing.Point(81, 3);
+            this.exitPictureBox.Name = "exitPictureBox";
+            this.exitPictureBox.Size = new System.Drawing.Size(33, 49);
+            this.exitPictureBox.TabIndex = 0;
+            this.exitPictureBox.TabStop = false;
+            this.exitPictureBox.Click += new System.EventHandler(this.pictureBox1_Click);
+            // 
+            // minimizePictureBox
+            // 
+            this.minimizePictureBox.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.minimizePictureBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.minimizePictureBox.Image = ((System.Drawing.Image)(resources.GetObject("minimizePictureBox.Image")));
+            this.minimizePictureBox.Location = new System.Drawing.Point(42, 3);
+            this.minimizePictureBox.Name = "minimizePictureBox";
+            this.minimizePictureBox.Size = new System.Drawing.Size(33, 49);
+            this.minimizePictureBox.TabIndex = 4;
+            this.minimizePictureBox.TabStop = false;
+            this.minimizePictureBox.Click += new System.EventHandler(this.minimizePictureBox_Click);
+            // 
             // logoutPictureBox
             // 
             this.logoutPictureBox.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -194,36 +206,24 @@
             this.logoutPictureBox.Image = ((System.Drawing.Image)(resources.GetObject("logoutPictureBox.Image")));
             this.logoutPictureBox.Location = new System.Drawing.Point(3, 3);
             this.logoutPictureBox.Name = "logoutPictureBox";
-            this.logoutPictureBox.Size = new System.Drawing.Size(32, 49);
+            this.logoutPictureBox.Size = new System.Drawing.Size(33, 49);
             this.logoutPictureBox.TabIndex = 2;
             this.logoutPictureBox.TabStop = false;
             this.logoutPictureBox.Tag = "Logout";
             this.logoutPictureBox.Visible = false;
             this.logoutPictureBox.Click += new System.EventHandler(this.logoutPictureBox_Click);
             // 
-            // minimizePictureBox
+            // welcomeUserLabel
             // 
-            this.minimizePictureBox.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.minimizePictureBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.minimizePictureBox.Image = ((System.Drawing.Image)(resources.GetObject("minimizePictureBox.Image")));
-            this.minimizePictureBox.Location = new System.Drawing.Point(41, 3);
-            this.minimizePictureBox.Name = "minimizePictureBox";
-            this.minimizePictureBox.Size = new System.Drawing.Size(32, 49);
-            this.minimizePictureBox.TabIndex = 4;
-            this.minimizePictureBox.TabStop = false;
-            this.minimizePictureBox.Click += new System.EventHandler(this.minimizePictureBox_Click);
-            // 
-            // exitPictureBox
-            // 
-            this.exitPictureBox.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.exitPictureBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.exitPictureBox.Image = ((System.Drawing.Image)(resources.GetObject("exitPictureBox.Image")));
-            this.exitPictureBox.Location = new System.Drawing.Point(79, 3);
-            this.exitPictureBox.Name = "exitPictureBox";
-            this.exitPictureBox.Size = new System.Drawing.Size(35, 49);
-            this.exitPictureBox.TabIndex = 0;
-            this.exitPictureBox.TabStop = false;
-            this.exitPictureBox.Click += new System.EventHandler(this.pictureBox1_Click);
+            this.welcomeUserLabel.AutoSize = true;
+            this.welcomeUserLabel.Font = new System.Drawing.Font("Source Code Pro", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.welcomeUserLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(150)))), ((int)(((byte)(100)))));
+            this.welcomeUserLabel.Location = new System.Drawing.Point(3, 9);
+            this.welcomeUserLabel.Name = "welcomeUserLabel";
+            this.welcomeUserLabel.Size = new System.Drawing.Size(143, 34);
+            this.welcomeUserLabel.TabIndex = 0;
+            this.welcomeUserLabel.Text = "Welcome,\r\n";
+            this.welcomeUserLabel.Visible = false;
             // 
             // MoneyHubContentPanel
             // 
@@ -272,9 +272,9 @@
             this.welcomeUserPanel.ResumeLayout(false);
             this.welcomeUserPanel.PerformLayout();
             this.appControlTLPanel.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.logoutPictureBox)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.minimizePictureBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.exitPictureBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.minimizePictureBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.logoutPictureBox)).EndInit();
             this.MoneyHubBasePanel.ResumeLayout(false);
             this.ResumeLayout(false);
 

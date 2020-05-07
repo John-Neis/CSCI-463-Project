@@ -5,12 +5,12 @@ import java.sql.DriverManager;
 import java.sql.Statement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-
+import java.sql.SQLIntegrityConstraintViolationException;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import java.io.IOException;
-
+import java.sql.SQLIntegrityConstraintViolationException;
 import java.net.Socket;
 import java.net.ServerSocket;
 
@@ -26,16 +26,39 @@ public class ServerDriver {
 		return null;
 	}
 
-	public static boolean insertRecord(String[] data, Connection dbh) {
+	public static void insertUserData(String[] data, Connection dbh, PrintWriter output) {
 		String sql = "insert into users values(NULL, '" + data[1] + "', '" + data[2] + "', '" + data[3] + "', '" + data[4] + "');";
-		System.out.println(sql);
+		System.out.println("SQL CMD: "+sql);
+		//boolean result = false;
+		String reply;
 		try {
 			Statement stmnt = dbh.createStatement();
-			return stmnt.execute(sql);
-
-		} catch(SQLException e) {
+			//result = 
+			stmnt.execute(sql);
+			//System.out.println(result);
+		    //check result from attempt to add user to database
+		    // if(result == true){
+				reply = "1:NULL";
+				System.out.println("SERVER: Response to Client:" + reply);
+				output.println(reply);
+			// }
+			// else if(result == false);
+			// {
+			// 	reply = "0:NULL";	
+			// 	System.out.println("SERVER: Response to Client(failed):" + reply);
+			// 	output.println(reply);
+			// }
+		}
+		catch(SQLIntegrityConstraintViolationException e){
+			System.out.println("SQL: ERROR ACCOUNT MAY ALREADY EXIST");
 			e.printStackTrace();
-			return false;
+		}
+		 catch(SQLException e) {
+			System.out.println("SQL: OTHER SQL ERROR");
+			e.printStackTrace();
+			reply = "0:NULL";	
+			System.out.println("SERVER: Response to Client:" + reply);
+			output.println(reply);
 		}
 	}
 
@@ -48,7 +71,7 @@ public class ServerDriver {
 		System.out.println("Client pwd:  " + pwd);
 
 		String sql = "select * from users where UserName = '" + user + "' and Password = '" + pwd +"';";
-		System.out.println(sql);
+		System.out.println("SQL CMD: "+ sql);
 		int resultCount = -1;
 					
 		try {
@@ -115,9 +138,10 @@ public class ServerDriver {
 			dbh = DriverManager.getConnection(
 					"jdbc:mysql://localhost:3306/bank", //?useSSL=false&autoReconnect=true",
 					"root",
-					"pass260word"
+					"Magichawk17%"
 			);			
-		} catch(Exception e) {
+		}
+		 catch(Exception e) {
 			e.printStackTrace();
 			System.exit(1);
 		}
@@ -149,23 +173,26 @@ public class ServerDriver {
 						clientResponse = input.readLine();
 
 						if(clientResponse == null) {
-							System.out.println("Client disconnected");
+							System.out.println("Client Disconnected");
 							break;
 						}
 
 						System.out.println("Client: " + clientResponse);
 
 						if(clientResponse.equalsIgnoreCase("<--quit--> ")) {
-							output.println("1");
-							output.println("You've initiated remote shutdown of server. Goodbye.");
-							System.out.println("Server shutting down.");
+							output.println("Server: 1");
+							output.println("Server: You've initiated remote shutdown of server. Goodbye.");
+							System.out.println("Server: Shutting down...");
 							break;
 						}
 
-						if(clientResponse.split("\\s")[0].equals("0")) {
+						if(clientResponse.split("\\s")[0].equals("0"))
+						{
 							String[] createRecord = clientResponse.split("\\s");
-							insertRecord(createRecord, dbh);
-						} else {
+							insertUserData(createRecord, dbh, output);
+						}
+						 else if(clientResponse.split("\\s")[0].equals("1"))
+						{
 							String[] login = clientResponse.split("\\s");
 							userLogin(login, dbh, rs, output);
 						}
