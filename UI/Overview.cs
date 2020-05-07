@@ -36,25 +36,4 @@ namespace MoneyHub_User_Interface
         }
     }
 }
-=======
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 
-namespace MoneyHub_User_Interface
-{
-    public partial class Overview : Form
-    {
-        public Overview()
-        {
-            InitializeComponent();
-        }
-    }
-}
->>>>>>> d5dd7f425a39eab0b7ef52b0c18c41d8558d1eb2

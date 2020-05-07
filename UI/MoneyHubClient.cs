@@ -33,9 +33,9 @@ namespace MoneyHub_User_Interface
         public static AccountSummaryForm asf = new AccountSummaryForm();
         public static SettingsForm sf = new SettingsForm();
         //Jack's IP
-        //public byte[] ip = { 192, 168, 0, 15 };
+        public byte[] ip = { 192, 168, 0, 15 };
         //Sam's IP
-        public byte[] ip = { 192, 168, 254, 20 };
+        //public byte[] ip = { 192, 168, 254, 20 };
         public int port = 1338;
         public IPAddress ipAddr;
         public IPEndPoint localEndPoint;
